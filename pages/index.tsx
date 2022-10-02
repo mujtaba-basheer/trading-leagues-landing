@@ -1,37 +1,50 @@
-import Head from 'next/head'
-import { GetStaticProps, NextPage } from 'next'
-import Post from '../components/post'
-import { PostData, PostDataListProps } from '../types/postdata'
-import { GetPosts } from '../lib/postdata_api'
+import Head from 'next/head';
+import { NextPage } from 'next';
+import Image from 'next/image';
+import styled from 'styled-components';
+import ComponentA from '../components/ComponentA';
+import ComponentB from '../components/ComponentB';
 
-export const getStaticProps: GetStaticProps = async (_context) => {
-  // fetch list of posts
-  const posts: PostData[] = await GetPosts()
-  return {
-    props: {
-      postDataList: posts,
-    },
-  }
-}
+const StyledHeading = styled.h1`
+  font-size: 1.2em;
+  color: black;
+  padding: 0.5em;
+`;
 
-const IndexPage: NextPage<PostDataListProps> = ({
-  postDataList,
-}: PostDataListProps) => {
+const StyledContainer = styled.div`
+  padding: 1em;
+  border: 2px solid black;
+`;
+
+const ImageContainer = styled.div`
+  padding: 0.5em;
+  background-color: black;
+`;
+
+const App: NextPage<{}> = () => {
   return (
     <main>
       <Head>
-        <title>Home page</title>
+        <title>Trading Leagues</title>
       </Head>
 
-      <h1>List of posts</h1>
+      <StyledHeading>Landing Page</StyledHeading>
 
-      <section>
-        {postDataList.map((post: PostData) => (
-          <Post {...post} key={post.id} />
-        ))}
-      </section>
+      <StyledContainer>
+        <ComponentA text='Component A' />
+        <ComponentB text='Component B' />
+      </StyledContainer>
+
+      <ImageContainer>
+        <Image
+          src="/assets/logo.svg" // Route of the image file
+          height={50} // Desired size with correct aspect ratio
+          width={296} // Desired size with correct aspect ratio
+          alt="Logo"
+        />
+      </ImageContainer>
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default App;
