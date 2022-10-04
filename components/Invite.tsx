@@ -119,7 +119,7 @@ const AdSection = styled.div`
     }
 `;
 
-const Coin = styled(Image)`
+const PositionedImage = styled(Image)`
     position: absolute;
     display: block;
     top: ${props => (props.top) ? `${props.top}px` : "auto"};
@@ -158,8 +158,8 @@ const Invite: () => JSX.Element = () => <StyledSection>
                 <p>Get ₹100 for every friend that downloads the app.
                 </p>
 
-                {coinCssDetails.map((x, i) => <Coin src="/assets/coin.svg" alt="icon" key={i} {...x} />)}
-                {starCssDetails.map((x, i) => <Coin src="/assets/star.svg" alt="icon" key={i} {...x} />)}
+                {coinCssDetails.map((x, i) => <PositionedImage src="/assets/coin.svg" alt="icon" key={i} {...x} />)}
+                {starCssDetails.map((x, i) => <PositionedImage src="/assets/star.svg" alt="icon" key={i} {...x} />)}
             </AdSection>
         </BottomSection>
     </SectionContent>
