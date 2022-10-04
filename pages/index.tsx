@@ -10,6 +10,7 @@ const Layout = () => <main>
         <title>Trading Leagues</title>
     </Head>
 
+    <a href="/test">Go to test page</a>
     <InfoSection />
     <Mockups />
     <Invite />
