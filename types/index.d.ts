@@ -3,4 +3,16 @@ export type InfoItemType = {
   para: string;
 };
 
-export type InfoProps = {};
+export type SocialDataItem = {
+  title: string;
+  url: string;
+};
+
+export type CssItemProps = {
+  top?: number;
+  bottom?: number;
+  left?: number;
+  right?: number;
+  rotation: number;
+  size: number;
+};

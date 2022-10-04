@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
     return (
-        <Html lang="en">
+        <Html onScroll={() => console.log("d")}>
             <Head>
                 <link key="preconnect" rel="preconnect" href="https://fonts.googleapis.com" />
                 <link key="crossorigin" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />

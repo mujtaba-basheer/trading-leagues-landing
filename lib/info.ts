@@ -18,3 +18,9 @@ export const infoData: InfoItemType[] = [
     para: "Compete with your peers, other players in an ultimate game of skill, stock markets! Climb up the leaderboard, and win real money!",
   },
 ];
+
+export const infoPoints: string[] = [
+  "No stress",
+  "No capital",
+  "No Brokerage Account",
+];

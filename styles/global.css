@@ -8,11 +8,15 @@
   font-size: 16px;
 }
 
+html,
 body {
   font-family: "Barlow", sans-serif;
 }
 
-html,
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
 }
