@@ -5,14 +5,12 @@ import Mockups from "../components/Mockups";
 import Invite from "../components/Invite";
 import Footer from "../components/Footer";
 
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
 const Layout = () => <main>
     <Head>
         <title>Trading Leagues</title>
     </Head>
 
-    <a href={prefix + "/test"}>Go to test page</a>
+    <a href={"/test"}>Go to test page</a>
     <InfoSection />
     <Mockups />
     <Invite />
