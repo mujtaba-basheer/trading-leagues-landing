@@ -7,10 +7,11 @@ module.exports = (phase, { defaultConfig }) => {
 
   const isProd =
     phase === PHASE_PRODUCTION_BUILD && process.env.STAGING !== "1";
+  console.log({ isProd });
 
   const nextConfig = {
     basePath: process.env.NEXT_PUBLIC_BASE_PATH,
-    assetPrefix: isProd ? "/trading-leagues-landing" : "",
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
     env: {},
   };
   return nextConfig;

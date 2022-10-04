@@ -78,6 +78,8 @@ jobs:
           NEXT_PUBLIC_BASE_PATH: /trading-leagues-landing
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
+        env:
+          NEXT_PUBLIC_BASE_PATH: /trading-leagues-landing
       - name: Add .nojekyll file
         run: touch ./out/.nojekyll
       - name: Upload artifact
