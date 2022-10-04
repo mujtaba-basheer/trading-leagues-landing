@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
