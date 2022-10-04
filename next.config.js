@@ -5,9 +5,8 @@ const isProd = process.env.NODE_ENV === "production";
  */
 const nextConfig = {
   /* config options here */
-  assetPrefix: isProd
-    ? "https://mujtaba-basheer.github.io/trading-leagues-landing"
-    : undefined,
+  basePath: isProd ? "trading-leagues-landing" : "",
+  assetPrefix: isProd ? "/trading-leagues-landing" : undefined,
 };
 
 module.exports = nextConfig;
