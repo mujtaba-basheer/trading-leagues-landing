@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { coinCssDetails, starCssDetails } from '../lib/invite';
 import { CssItemProps } from '../types';
 
+const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const Image = (props: CssItemProps & { src: string; alt: string; }) => <img {...props} />;
 
 const StyledSection = styled.section`
@@ -158,8 +160,8 @@ const Invite: () => JSX.Element = () => <StyledSection>
                 <p>Get ₹100 for every friend that downloads the app.
                 </p>
 
-                {coinCssDetails.map((x, i) => <PositionedImage src="/assets/coin.svg" alt="icon" key={i} {...x} />)}
-                {starCssDetails.map((x, i) => <PositionedImage src="/assets/star.svg" alt="icon" key={i} {...x} />)}
+                {coinCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/coin.svg`} alt="icon" key={i} {...x} />)}
+                {starCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/star.svg`} alt="icon" key={i} {...x} />)}
             </AdSection>
         </BottomSection>
     </SectionContent>

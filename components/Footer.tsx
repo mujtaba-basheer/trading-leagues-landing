@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 import { socialData } from '../lib/social';
 
+const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const StyledSection = styled.footer`
   background-color: #191B2A;
   padding: 3em 0;
@@ -88,7 +90,7 @@ const StyledForm = styled.form`
 const Footer: () => JSX.Element = () => <StyledSection>
     <SectionContent>
         <CtaSection>
-            <img src="/assets/logo_footer.svg" alt="logo" />
+            <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
             <StyledForm>
                 <div>
                     <input type="text" placeholder="Enter Mobile Number" name="mobile" id="mobile" />
@@ -102,7 +104,7 @@ const Footer: () => JSX.Element = () => <StyledSection>
                 <span>Follow our trail for the latest updates</span>
                 <div className="social-list">
                     {socialData.map(x => <a href={x.url} target="_blank" rel="noreferrer" key={x.title}>
-                        <img src={`/assets/social/${x.title}.svg`} alt={x.title} />
+                        <img src={`${asset_prefix}/assets/social/${x.title}.svg`} alt={x.title} />
                     </a>)}
                 </div>
             </div>
