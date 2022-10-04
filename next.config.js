@@ -9,8 +9,8 @@ module.exports = (phase, { defaultConfig }) => {
     phase === PHASE_PRODUCTION_BUILD && process.env.STAGING !== "1";
 
   const nextConfig = {
-    basePath: isProd ? "/trading-leagues-landing" : undefined,
-    assetPrefix: isProd ? "/trading-leagues-landing" : undefined,
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+    assetPrefix: isProd ? "/trading-leagues-landing" : "",
     env: {},
   };
   return nextConfig;
