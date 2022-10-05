@@ -70,7 +70,7 @@ const InfoItem = styled.li`
 `;
 
 const InfoSection: () => JSX.Element = () => <StyledSection>
-  <SectionContent>
+  <SectionContent id="#refer-and-earn">
     <LeftSection>
       <BigHeading>
         Take on the market the fun way!

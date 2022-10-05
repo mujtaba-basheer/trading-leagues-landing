@@ -8,6 +8,7 @@ const StyledSection = styled.section`
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
 `;
 
 const Mockups: () => JSX.Element = () => <StyledSection className="parallax-item">

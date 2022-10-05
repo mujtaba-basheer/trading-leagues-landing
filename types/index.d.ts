@@ -16,3 +16,17 @@ export type CssItemProps = {
   rotation: number;
   size: number;
 };
+
+export type TabLinkType = {
+  title: string;
+  key: string;
+};
+
+export type LeagueDetailsType = {
+  heading: string;
+  key: string;
+  main: string;
+  paras: string[];
+  color: string;
+  state?: string;
+};
