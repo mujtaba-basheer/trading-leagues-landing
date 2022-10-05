@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { socialData } from '../lib/social';
+import device from '../styles/breapoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -15,9 +16,17 @@ const SectionContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${device.mobile} {
+    display: block;
+  }
 `;
 
 const CtaSection = styled.div`
+    @media ${device.mobile} {
+        margin-bottom: 2.25em;
+    }
+
     & img {
         display: block;
         margin-bottom: 1.5em;
@@ -30,6 +39,11 @@ const SocialSection = styled.div`
         font-weight: 600;
         color: #FFFFFF;
         margin-bottom: 0.5em;
+
+        @media ${device.mobile} {
+            font-size: 1.25rem;
+            margin-bottom: 0;
+        }
     }
 
     & > div {
@@ -37,10 +51,20 @@ const SocialSection = styled.div`
         align-items: center;
         gap: 1.75em;
 
+        @media ${device.mobile} {
+            display: block;
+        }
+
         & span {
             font-size: 1.2rem;
             font-weight: 400;
             color: rgba(255, 255, 255, 0.7);
+
+            @media ${device.mobile} {
+                font-size: 1rem;
+                display: block;
+                margin: 1em 0;   
+            }
         }
     }
 
@@ -48,12 +72,17 @@ const SocialSection = styled.div`
         display: inline-flex;
         align-items: flex-end;
         gap: 0.5em;
+
+        @media ${device.mobile} {
+            gap: 2em;
+        }
     }
 `;
 
 const StyledForm = styled.form`
     & div {
         height: 40px;
+        position: relative;
 
         & input {
             display: inline-block;
@@ -61,12 +90,22 @@ const StyledForm = styled.form`
             border: none;
             padding: 0 1.5em;
 
+            @media ${device.mobile} {
+                position: absolute;
+                bottom: 0;
+                padding: 0 1em;
+            }
+
             &[type="text"] {
                 background-color: rgba(255, 255, 255, 0.1);
                 border-radius: 20px 0 0 20px;
                 outline: none;
                 font-size: 1rem;
                 color: #FFFFFF;
+
+                @media ${device.mobile} {
+                    left: 0;
+                }
 
                 &::placeholder {
                     color: #9EA0AA;
@@ -83,6 +122,12 @@ const StyledForm = styled.form`
                 text-transform: uppercase;
                 color: #15182C;
                 cursor: pointer;
+
+                @media ${device.mobile} {
+                    position: absolute;
+                    left: auto;
+                    right: 0;
+                }
             }
         }
     }`;

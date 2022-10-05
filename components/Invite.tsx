@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import { coinCssDetails, starCssDetails } from '../lib/invite';
 import { CssItemProps } from '../types';
+import device from '../styles/breapoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -18,6 +19,10 @@ const SectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 1em;
+
+  @media ${device.mobile} {
+    display: block;
+  }
 `;
 
 const TopSection = styled.div`
@@ -28,6 +33,10 @@ const BottomSection = styled.div`
   grid-column: 2 / 12;
   display: flex;
   justify-content: space-between;
+
+  @media ${device.mobile} {
+    display: block;
+  }
 `;
 
 const BigHeading = styled.h1`
@@ -37,13 +46,28 @@ const BigHeading = styled.h1`
   line-height: 76px;
   width: 750px;
   margin-bottom: 2em;
+
+  @media ${device.mobile} {
+    font-size: 2.5rem;
+    width: auto;
+    line-height: 48px;
+    margin-bottom: 1em;
+  }
 `;
 
 const CtaSection = styled.div`
+    @media ${device.mobile} {
+        margin-bottom: 4em;
+    }
+
     & h3 {
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 0.5em;
+
+        @media ${device.mobile} {
+            font-size: 1.5rem;
+        }
     }
 
     & p {
@@ -51,6 +75,11 @@ const CtaSection = styled.div`
         font-weight: 400;
         margin-bottom: 2.5em;
         width: 500px;
+
+        @media ${device.mobile} {
+            font-size: 1.2rem;
+            width: auto;
+        }
     }
 `;
 
@@ -65,15 +94,29 @@ const StyledForm = styled.form`
     & div {
         height: 40px;
 
+        @media ${device.mobile} {
+            position: relative;
+        }
+
         & input {
             display: inline-block;
             height: 100%;
             border: none;
             padding: 0 1.5em;
 
+            @media ${device.mobile} {
+                position: absolute;
+                bottom: 0;
+            }
+
             &[type="text"] {
                 border-radius: 20px 0 0 20px;
                 outline: none;
+
+                @media ${device.mobile} {
+                    left: 0;
+                    width: 90%;
+                }
             }
 
             &[type="submit"] {
@@ -85,6 +128,12 @@ const StyledForm = styled.form`
                 text-transform: uppercase;
                 color: #FFFFFF;
                 cursor: pointer;
+
+                @media ${device.mobile} {
+                    position: absolute;
+                    right: 0;
+                    left: auto;
+                }
             }
         }
     }`;
@@ -99,14 +148,28 @@ const AdSection = styled.div`
     padding: 2.5em 2em 5em 2em;
     position: relative;
 
+    @media ${device.mobile} {
+        width: 80%;
+        margin: 0 auto -3em auto;
+        padding: 1.5em 1.5em 6em 1.5em;
+    }
+
     & h3 {
         font-size: 3rem;
         font-weight: 600;
         margin-bottom: 0.5em;
 
+        @media ${device.mobile} {
+            font-size: 2.5rem;
+        }
+
         & span {
             font-size: 1rem;
             font-weight: 500;
+
+            @media ${device.mobile} {
+                font-size: 0.75rem;
+            }
         }
     }
 
@@ -114,6 +177,11 @@ const AdSection = styled.div`
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 30px;
+
+        @media ${device.mobile} {
+            font-size: 1rem;
+            line-height: normal;
+        }
         
         &:not(:last-child) {
             margin-bottom: 1em;

@@ -1,13 +1,18 @@
 import styled from 'styled-components';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { tabLinksData, leagueDetailsData } from '../lib/swiper';
 import { LeagueDetailsType } from '../types';
+import device from '../styles/breapoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.section`
   background-color: #191B2B;
   padding: 3em 0;
+
+  @media ${device.mobile} {
+    display: none;
+  }
 `;
 
 const SectionContent = styled.div`
@@ -22,6 +27,11 @@ const BigHeading = styled.h1`
   line-height: 76px;
   margin-bottom: 0.5em;
   text-align: center;
+
+  @media ${device.mobile} {
+    font-size: 2.5rem;
+    line-height: 48px;
+  }
 `;
 
 const StyledDescription = styled.p`
@@ -32,6 +42,12 @@ const StyledDescription = styled.p`
     margin: 0 auto;
     width: 500px;
     margin-bottom: 2em;
+
+    @media ${device.mobile} {
+        font-size: 1rem;
+        line-height: 22.4px;
+        width: 300px;
+    }
 `;
 
 const TabLinks = styled.div`
@@ -39,6 +55,10 @@ const TabLinks = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1em;
+
+    @media ${device.mobile} {
+        display: none;
+    }
 `;
 
 const TabLinkItem = styled.button<{ "data-active": boolean; }>`

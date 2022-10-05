@@ -30,3 +30,8 @@ export type LeagueDetailsType = {
   color: string;
   state?: string;
 };
+
+export type TypingDetail = {
+  w1: string;
+  w2: string;
+};

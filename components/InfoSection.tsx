@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { infoData, infoPoints } from '../lib/info';
+import device from '../styles/breapoints';
 
 const StyledSection = styled.section`
   background-color: #2031AE;
@@ -12,10 +13,18 @@ const SectionContent = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   column-gap: 1em;
+
+  @media ${device.mobile} {
+    display: block;
+  }
 `;
 
 const LeftSection = styled.div`
   grid-column: 2 / 7;
+
+  @media ${device.mobile} {
+    margin-bottom: 3em;
+  }
 `;
 
 const RightSection = styled.div`
@@ -29,6 +38,12 @@ const BigHeading = styled.h1`
   line-height: 76px;
   width: 350px;
   margin-bottom: 0.75em;
+
+  @media ${device.mobile} {
+    font-size: 2.5rem;
+    line-height: 48px;
+    width: auto;
+  }
 `;
 
 const ListContainer = styled.ul`
@@ -43,6 +58,10 @@ const Point = styled.li`
   &:not(:last-child) {
     margin-bottom: 0.5em;
   }
+
+  @media ${device.mobile} {
+    font-size: 1.2rem;
+  }
 `;
 
 const InfoList = styled.ul`
@@ -56,12 +75,20 @@ const InfoItem = styled.li`
     font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 0.35em;
+
+    @media ${device.mobile} {
+      font-size: 1.2rem;
+    }
   }
 
   & p {
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
+
+    @media ${device.mobile} {
+      font-size: 1rem;
+    }
   }
 
   &:not(:last-child) {

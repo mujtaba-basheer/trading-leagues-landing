@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import device from '../styles/breapoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -9,6 +10,11 @@ const StyledSection = styled.section`
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+
+    @media ${device.mobile} {
+        height: 200px;
+        background-size: cover;
+    }
 `;
 
 const Mockups: () => JSX.Element = () => <StyledSection className="parallax-item">
