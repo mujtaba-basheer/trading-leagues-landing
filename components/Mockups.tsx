@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.section`
-    height: 500px;
+    height: 100vh;
     background-image: url(${`"${asset_prefix}/assets/mockups.svg"`});
     background-position: 50% 50%;
     background-repeat: no-repeat;
