@@ -133,7 +133,7 @@ const PositionedImage = styled(Image)`
     width: auto;
 `;
 
-const Invite: () => JSX.Element = () => <StyledSection>
+const Invite: () => JSX.Element = () => <StyledSection id="refer-and-earn">
     <SectionContent>
         <TopSection>
             <BigHeading>

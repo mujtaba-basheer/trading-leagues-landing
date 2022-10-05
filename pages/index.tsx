@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+import Hero from "../components/Hero";
 import Swiper from "../components/Swiper";
 import InfoSection from "../components/InfoSection";
 import Mockups from "../components/Mockups";
@@ -11,6 +12,7 @@ const Layout = () => <main>
         <title>Trading Leagues</title>
     </Head>
 
+    <Hero />
     <Swiper />
     <InfoSection />
     <Mockups />

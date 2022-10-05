@@ -58,9 +58,13 @@ const MainContent = styled.div`
     width: 90vw;
     grid-template-columns:  repeat(12, 1fr);
     column-gap: 1em;
+`;
+
+const LeftSection = styled.div`
+    grid-column: 2 / 7;
+    color: #FFFFFF;
     opacity: 1;
     transition: opacity 200ms ease-in;
-    visibility: visible;
 
     &.exiting {
         opacity: 0;
@@ -72,7 +76,6 @@ const MainContent = styled.div`
 
     &.entering {
         opacity: 1;
-        visibility: visible;
 
         & img {
             opacity: 1;
@@ -80,15 +83,11 @@ const MainContent = styled.div`
     }
 `;
 
-const LeftSection = styled.div`
-    grid-column: 2 / 7;
-    color: #FFFFFF;
-`;
-
 const RightSection = styled.div`
     grid-column: 7 / 12;
     justify-self: end;
     width: 300px;
+    position: relative;
 `;
 
 const StyledHeading = styled.h2`
@@ -117,8 +116,19 @@ const StyledImage = styled.img`
     display: block;
     width: 100%;
     height: auto;
-    opacity: 1;
-    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    &.active {
+        opacity: 1;
+
+        &.exiting {
+            opacity: 0;
+        }
+    }
 `;
 
 const Swiper: () => JSX.Element = () => {
@@ -143,14 +153,14 @@ const Swiper: () => JSX.Element = () => {
             <TabLinks>
                 {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>{x.title}</TabLinkItem>)}
             </TabLinks>
-            <MainContent className={leagueDetails.state}>
-                <LeftSection>
+            <MainContent>
+                <LeftSection className={leagueDetails.state}>
                     <StyledHeading color={leagueDetails.color}>{leagueDetails.heading}</StyledHeading>
                     <MainPara>{leagueDetails.main}</MainPara>
                     {leagueDetails.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
                 </LeftSection>
                 <RightSection>
-                    <StyledImage src={`${asset_prefix}/assets/leagues/${leagueDetails.key}.svg`} />
+                    {leagueDetailsData.map((x, i) => <StyledImage className={`${currentTab === i ? "active " + leagueDetails.state : ""}`} key={x.key} src={`${asset_prefix}/assets/leagues/${x.key}.svg`} />)}
                 </RightSection>
             </MainContent>
         </SectionContent>

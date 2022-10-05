@@ -14,7 +14,7 @@ export const tabLinksData: TabLinkType[] = [
     key: "classic-leagues",
   },
   {
-    title: "section leagues",
+    title: "selection leagues",
     key: "section-leagues",
   },
 ];
@@ -56,7 +56,7 @@ export const leagueDetailsData: LeagueDetailsType[] = [
     color: "#FFC0D5",
   },
   {
-    heading: "Section Leagues",
+    heading: "Selection Leagues",
     key: "section-leagues",
     main: "Fancy becoming a portfolio manager? Build a fantasy portfolio of 4-6 stocks to compete with other players. The best portfolio wins!",
     paras: [
