@@ -12,7 +12,7 @@ const StyledSection = styled.section`
 `;
 
 const SectionContent = styled.div`
-  padding: 3em 0;
+  padding: 4em 0;
   background: url(${asset_prefix}/assets/hero-bg.png), rgba(5, 8, 26, 0.85);
   background-size: cover;
 `;

@@ -2,9 +2,12 @@ import styled from 'styled-components';
 import { infoData, infoPoints } from '../lib/info';
 import device from '../styles/breapoints';
 
+const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const StyledSection = styled.section`
-  background-color: #2031AE;
-  padding: 3em 0;
+  background: url(${asset_prefix}/assets/noise-bg-blue.jpeg);
+  background-size: cover;
+  padding: 4em 0;
 `;
 
 const SectionContent = styled.div`
@@ -85,6 +88,7 @@ const InfoItem = styled.li`
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
+    text-align: justify;
 
     @media ${device.mobile} {
       font-size: 1rem;
@@ -92,7 +96,7 @@ const InfoItem = styled.li`
   }
 
   &:not(:last-child) {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
   }
 `;
 

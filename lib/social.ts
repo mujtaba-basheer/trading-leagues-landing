@@ -3,19 +3,19 @@ import { SocialDataItem } from "../types";
 export const socialData: SocialDataItem[] = [
   {
     title: "twitter",
-    url: "",
+    url: "https://twitter.com/trading_leagues",
   },
   {
     title: "facebook",
-    url: "",
+    url: "https://www.facebook.com/tradingleagues",
   },
   {
     title: "instagram",
-    url: "",
+    url: "https://www.instagram.com/tradingleagueshq/",
   },
   {
     title: "linkedin",
-    url: "",
+    url: "https://www.linkedin.com/showcase/tradingleagues/",
   },
   {
     title: "youtube",

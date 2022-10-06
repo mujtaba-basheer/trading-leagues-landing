@@ -7,7 +7,7 @@ const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.footer`
   background-color: #191B2A;
-  padding: 3em 0;
+  padding: 4em 0;
 `;
 
 const SectionContent = styled.div`

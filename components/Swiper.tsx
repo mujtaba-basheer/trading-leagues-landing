@@ -8,7 +8,7 @@ const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.section`
   background-color: #191B2B;
-  padding: 3em 0;
+  padding: 4em 0;
 
   @media ${device.mobile} {
   }
@@ -40,7 +40,7 @@ const StyledDescription = styled.p`
     text-align: center;
     margin: 0 auto;
     width: 500px;
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 
     @media ${device.mobile} {
         font-size: 1rem;
@@ -53,7 +53,7 @@ const TabLinks = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 1.75em;
 
     @media ${device.mobile} {
         display: none;
@@ -123,7 +123,14 @@ const MainContent = styled.div`
     }
 `;
 
-const MainContentMobile = styled.div``;
+const MainContentMobile = styled.div`
+    display: none;
+    scroll-snap-align: end;
+
+    @media ${device.mobile} {
+        display: block;
+    }
+`;
 
 const LeftSection = styled.div`
     grid-column: 2 / 7;
@@ -151,8 +158,9 @@ const LeftSection = styled.div`
 const RightSection = styled.div`
     grid-column: 7 / 12;
     justify-self: end;
-    width: 300px;
+    height: 90%;
     position: relative;
+    align-self: center;
 `;
 
 const StyledHeading = styled.h2`
@@ -168,20 +176,26 @@ const StyledHeading = styled.h2`
 
 const MainPara = styled.p`
     font-size: 1.25rem;
-    font-weight: 400;
-    margin-bottom: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1.75em;
+    max-width: 400px;
+    text-align: justify;
 
     @media ${device.mobile} {
         font-size: 1rem;
+        max-width: none;
     }
 `;
 
 const ShortPara = styled.p`
     font-size: 1.2rem;
-    font-weight: 600;
+    font-weight: 400;
+    max-width: 400px;
+    text-align: justify;
 
     @media ${device.mobile} {
         font-size: 1rem;
+        max-width: none;
     }
 
     &:not(:last-child) {
@@ -191,8 +205,8 @@ const ShortPara = styled.p`
 
 const StyledImage = styled.img`
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     opacity: 0;
     transition: opacity 200ms ease-in-out;
     position: absolute;
@@ -202,7 +216,7 @@ const StyledImage = styled.img`
     @media ${device.mobile} {
         position: relative;
         width: 60%;
-        margin: 0 auto;
+        height: auto;
         margin-bottom: 1.5em;
         opacity: 1;
     }
@@ -252,10 +266,13 @@ const Swiper: () => JSX.Element = () => {
                 {leagueDetailsData.map((x, i) => <LeagueMobile key={x.key}>
                     <TabLinkItemMobile className={currentTab === i ? "active" : ""}>
                         <h2>{x.heading}</h2>
-                        <button onClick={() => {
+                        <button onClick={(ev) => {
                             let setIndex = i;
                             if (currentTab === i) setIndex = -1;
                             setCurrentTab(setIndex);
+                            setTimeout(() => {
+                                (ev.target as HTMLElement).scrollIntoView({ behavior: "smooth" });
+                            }, 200);
                         }}>
                             <img src={`${asset_prefix}/assets/leagues/arrow-${currentTab === i ? "up" : "down"}.svg`} />
                         </button>

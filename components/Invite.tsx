@@ -10,7 +10,7 @@ const Image = (props: CssItemProps & { src: string; alt: string; }) => <img {...
 
 const StyledSection = styled.section`
   background-color: #00DF8D;
-  padding: 3em 0;
+  padding: 4em 0;
 `;
 
 const SectionContent = styled.div`
@@ -141,7 +141,7 @@ const StyledForm = styled.form`
 const AdSection = styled.div`
     background-color: #FFFFFF;
     border: 10px solid #006640;
-    margin-bottom: -3em;
+    margin-bottom: -4em;
     border-bottom: none;
     border-radius: 40px 0 0 0;
     width: 355px;
@@ -150,7 +150,7 @@ const AdSection = styled.div`
 
     @media ${device.mobile} {
         width: 80%;
-        margin: 0 auto -3em auto;
+        margin: 0 auto -4em auto;
         padding: 1.5em 1.5em 6em 1.5em;
     }
 
