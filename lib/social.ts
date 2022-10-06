@@ -17,8 +17,4 @@ export const socialData: SocialDataItem[] = [
     title: "linkedin",
     url: "https://www.linkedin.com/showcase/tradingleagues/",
   },
-  {
-    title: "youtube",
-    url: "",
-  },
 ];

@@ -158,9 +158,10 @@ const LeftSection = styled.div`
 const RightSection = styled.div`
     grid-column: 7 / 12;
     justify-self: end;
-    height: 90%;
     position: relative;
     align-self: center;
+    width: 318px;
+    height: 446px;
 `;
 
 const StyledHeading = styled.h2`
@@ -178,7 +179,6 @@ const MainPara = styled.p`
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1.75em;
-    max-width: 400px;
     text-align: justify;
 
     @media ${device.mobile} {
@@ -190,7 +190,7 @@ const MainPara = styled.p`
 const ShortPara = styled.p`
     font-size: 1.2rem;
     font-weight: 400;
-    max-width: 400px;
+    line-height: 28px;
     text-align: justify;
 
     @media ${device.mobile} {
@@ -205,8 +205,8 @@ const ShortPara = styled.p`
 
 const StyledImage = styled.img`
     display: block;
-    width: auto;
     height: 100%;
+    width: 100%;
     opacity: 0;
     transition: opacity 200ms ease-in-out;
     position: absolute;

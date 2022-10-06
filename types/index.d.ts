@@ -35,3 +35,11 @@ export type TypingDetail = {
   w1: string;
   w2: string;
 };
+
+export type ApiResponseType = {
+  status: "success" | "failure";
+  message: string;
+  data: number;
+  waitlist: number;
+  invite: 0 | 1;
+};

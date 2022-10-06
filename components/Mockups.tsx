@@ -12,8 +12,9 @@ const StyledSection = styled.section`
     background-size: cover;
 
     @media ${device.mobile} {
-        height: 200px;
+        height: 400px;
         background-size: cover;
+        background-attachment: scroll;
     }
 `;
 

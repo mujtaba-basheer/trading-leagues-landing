@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { socialData } from '../lib/social';
+import submitHandler from '../lib/handler';
 import device from '../styles/breapoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -136,9 +137,9 @@ const Footer: () => JSX.Element = () => <StyledSection>
     <SectionContent>
         <CtaSection>
             <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
-            <StyledForm>
+            <StyledForm onSubmit={submitHandler}>
                 <div>
-                    <input type="text" placeholder="Enter Mobile Number" name="mobile" id="mobile" />
+                    <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                     <input type="submit" value="get early access" />
                 </div>
             </StyledForm>

@@ -1,5 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { useRef, useEffect } from 'react';
+
+import submitHandler from '../lib/handler';
 import { animateType } from '../public/js/hero';
 import device from '../styles/breapoints';
 
@@ -13,14 +15,24 @@ const StyledSection = styled.section`
 
 const SectionContent = styled.div`
   padding: 4em 0;
-  background: url(${asset_prefix}/assets/hero-bg.png), rgba(5, 8, 26, 0.85);
+  background: rgba(5, 8, 26, 0.85);
   background-size: cover;
+`;
+
+const VideoBackground = styled.video`
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 0.1;
 `;
 
 const StyledBanner = styled.div`
     background-color: #171728;
     text-align: center;
     padding: 0.75em 0;
+    z-index: 5;
+    position: relative;
 
     @media ${device.mobile} {
         position: relative;
@@ -238,6 +250,9 @@ const Hero: () => JSX.Element = () => {
     }, [typeEl.current]);
 
     return <StyledSection style={{ height: "100vh" }}>
+        <VideoBackground autoPlay muted loop>
+            <source src={`${asset_prefix}/assets/video.mp4`} type="video/mp4" />
+        </VideoBackground>
         <StyledBanner>
             <h1>coming soon on 10th OCtober 2022</h1>
         </StyledBanner>
@@ -249,9 +264,9 @@ const Hero: () => JSX.Element = () => {
             <MainContent>
                 <h1 ref={typeEl}></h1>
                 <p>TradingLeagues is a first-of-its-kind fantasy trading platform providing a gamified experience of the financial markets.</p>
-                <StyledForm>
+                <StyledForm onSubmit={submitHandler}>
                     <div>
-                        <input type="text" placeholder="Enter Mobile Number" name="mobile" id="mobile" />
+                        <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                         <input type="submit" value="get early access" />
                     </div>
                 </StyledForm>

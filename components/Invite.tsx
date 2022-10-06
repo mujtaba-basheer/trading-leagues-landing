@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { coinCssDetails, starCssDetails } from '../lib/invite';
+import submitHandler from '../lib/handler';
 import { CssItemProps } from '../types';
 import device from '../styles/breapoints';
 
@@ -84,6 +85,12 @@ const CtaSection = styled.div`
 `;
 
 const StyledForm = styled.form`
+    width: max-content;
+
+    @media ${device.mobile} {
+        width: auto;
+    }
+
     & label {
         font-size: 1rem;
         font-weight: 400;
@@ -93,6 +100,10 @@ const StyledForm = styled.form`
 
     & div {
         height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
 
         @media ${device.mobile} {
             position: relative;
@@ -112,6 +123,7 @@ const StyledForm = styled.form`
             &[type="text"] {
                 border-radius: 20px 0 0 20px;
                 outline: none;
+                width: calc(100% - 20px);
 
                 @media ${device.mobile} {
                     left: 0;
@@ -122,18 +134,12 @@ const StyledForm = styled.form`
             &[type="submit"] {
                 border-radius: 20px;
                 font-weight: 500;
-                position: relative;
-                left: -20px;
+                position: absolute;
+                right: 0;
                 background-color: #2031AE;
                 text-transform: uppercase;
                 color: #FFFFFF;
                 cursor: pointer;
-
-                @media ${device.mobile} {
-                    position: absolute;
-                    right: 0;
-                    left: auto;
-                }
             }
         }
     }`;
@@ -212,10 +218,10 @@ const Invite: () => JSX.Element = () => <StyledSection id="refer-and-earn">
             <CtaSection>
                 <h3>Refer & Earn!</h3>
                 <p>Invite your friends & family to double the fun and compete for the ultimate Financial Market glory.</p>
-                <StyledForm>
+                <StyledForm onSubmit={submitHandler}>
                     <label htmlFor="mobile">Enter your Whatsapp number to recieve the referral link</label>
                     <div>
-                        <input type="text" placeholder="Enter Mobile Number" name="mobile" id="mobile" />
+                        <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                         <input type="submit" value="send link" />
                     </div>
                 </StyledForm>
