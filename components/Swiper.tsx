@@ -11,7 +11,6 @@ const StyledSection = styled.section`
   padding: 3em 0;
 
   @media ${device.mobile} {
-    display: none;
   }
 `;
 
@@ -73,12 +72,58 @@ const TabLinkItem = styled.button<{ "data-active": boolean; }>`
     margin-bottom: 4em;
 `;
 
+const LeagueMobile = styled.div``;
+
+const LeagueContentMobile = styled.div`
+    color: #FFFFFF;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+`;
+
+const TabLinkItemMobile = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0;
+
+    & h2 {
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #737585;
+    }
+
+    & button {
+        background: none;
+        border: none;
+    }
+
+    &.active {
+        & h2 {
+            color: #00DF8D;
+        }
+
+        &.active + div {
+            padding: 1em 0;
+            max-height: none;
+        }
+    }
+`;
+
 const MainContent = styled.div`
     display: grid;
     width: 90vw;
     grid-template-columns:  repeat(12, 1fr);
     column-gap: 1em;
+
+    @media ${device.mobile} {
+        display: none;
+        visibility: hidden;
+    }
 `;
+
+const MainContentMobile = styled.div``;
 
 const LeftSection = styled.div`
     grid-column: 2 / 7;
@@ -115,17 +160,29 @@ const StyledHeading = styled.h2`
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5em;
+
+    @media ${device.mobile} {
+        font-size: 1.5rem;
+    }
 `;
 
 const MainPara = styled.p`
     font-size: 1.25rem;
     font-weight: 400;
     margin-bottom: 1.2em;
+
+    @media ${device.mobile} {
+        font-size: 1rem;
+    }
 `;
 
 const ShortPara = styled.p`
     font-size: 1.2rem;
     font-weight: 600;
+
+    @media ${device.mobile} {
+        font-size: 1rem;
+    }
 
     &:not(:last-child) {
         margin-bottom: 0.75em;
@@ -141,6 +198,14 @@ const StyledImage = styled.img`
     position: absolute;
     bottom: 0;
     right: 0;
+
+    @media ${device.mobile} {
+        position: relative;
+        width: 60%;
+        margin: 0 auto;
+        margin-bottom: 1.5em;
+        opacity: 1;
+    }
 
     &.active {
         opacity: 1;
@@ -173,16 +238,36 @@ const Swiper: () => JSX.Element = () => {
             <TabLinks>
                 {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>{x.title}</TabLinkItem>)}
             </TabLinks>
-            <MainContent>
+            {leagueDetails && <MainContent>
                 <LeftSection className={leagueDetails.state}>
                     <StyledHeading color={leagueDetails.color}>{leagueDetails.heading}</StyledHeading>
                     <MainPara>{leagueDetails.main}</MainPara>
-                    {leagueDetails.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
+                    {leagueDetails.paras?.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
                 </LeftSection>
                 <RightSection>
                     {leagueDetailsData.map((x, i) => <StyledImage className={`${currentTab === i ? "active " + leagueDetails.state : ""}`} key={x.key} src={`${asset_prefix}/assets/leagues/${x.key}.svg`} />)}
                 </RightSection>
-            </MainContent>
+            </MainContent>}
+            <MainContentMobile>
+                {leagueDetailsData.map((x, i) => <LeagueMobile key={x.key}>
+                    <TabLinkItemMobile className={currentTab === i ? "active" : ""}>
+                        <h2>{x.heading}</h2>
+                        <button onClick={() => {
+                            let setIndex = i;
+                            if (currentTab === i) setIndex = -1;
+                            setCurrentTab(setIndex);
+                        }}>
+                            <img src={`${asset_prefix}/assets/leagues/arrow-${currentTab === i ? "up" : "down"}.svg`} />
+                        </button>
+                    </TabLinkItemMobile>
+                    <LeagueContentMobile>
+                        <StyledImage src={`${asset_prefix}/assets/leagues/${x.key}.svg`} />
+                        <StyledHeading color={x.color}>{x.heading}</StyledHeading>
+                        <MainPara>{x.main}</MainPara>
+                        {x.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
+                    </LeagueContentMobile>
+                </LeagueMobile>)}
+            </MainContentMobile>
         </SectionContent>
     </StyledSection>;
 };
