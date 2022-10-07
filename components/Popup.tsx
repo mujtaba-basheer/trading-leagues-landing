@@ -136,7 +136,7 @@ const Popup = ({ formContext, setFormContext }: { setFormContext: Dispatch<SetSt
                 <h2>You</h2>
                 <h2>#{formContext.wailist_no}</h2>
             </PopupInfo>
-            <p>You can begin your trade game soon. We will keep you updated.</p>
+            <p>You can begin your trading game soon. We will keep you updated.</p>
         </PopupContent>
     </Modal>;
 };
