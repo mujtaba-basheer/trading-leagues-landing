@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { socialData } from '../lib/social';
 import { submitHandler } from '../lib/handler';
-import device from '../styles/breapoints';
+import device from '../styles/breakpoints';
 import { PopupProps } from '../types';
 import { Dispatch, SetStateAction } from 'react';
 
@@ -108,6 +108,7 @@ const StyledForm = styled.form`
 
                 @media ${device.mobile} {
                     left: 0;
+                    width: 90%;
                 }
 
                 &::placeholder {
@@ -133,7 +134,8 @@ const StyledForm = styled.form`
                 }
             }
         }
-    }`;
+    }
+`;
 
 const Footer = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => <StyledSection>
     <SectionContent>

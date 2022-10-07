@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { infoData, infoPoints } from '../lib/info';
-import device from '../styles/breapoints';
+import device from '../styles/breakpoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 

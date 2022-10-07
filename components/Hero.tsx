@@ -3,7 +3,7 @@ import { useRef, useEffect, SetStateAction, Dispatch } from 'react';
 
 import { submitHandler } from '../lib/handler';
 import { animateType } from '../public/js/hero';
-import device from '../styles/breapoints';
+import device from '../styles/breakpoints';
 import { PopupProps } from '../types';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -201,6 +201,7 @@ const StyledForm = styled.form`
                 @media ${device.mobile} {
                     font-size: 0.875rem;
                     left: 0;
+                    width: 90%;
                 }
             }
 

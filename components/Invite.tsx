@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { coinCssDetails, starCssDetails } from '../lib/invite';
 import { submitHandler } from '../lib/handler';
 import { CssItemProps, PopupProps } from '../types';
-import device from '../styles/breapoints';
+import device from '../styles/breakpoints';
 import { Dispatch, SetStateAction } from 'react';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
