@@ -180,6 +180,7 @@ const MainPara = styled.p`
     font-weight: 600;
     margin-bottom: 1.75em;
     text-align: justify;
+    color: #00DF8D;
 
     @media ${device.mobile} {
         font-size: 1rem;
@@ -200,6 +201,10 @@ const ShortPara = styled.p`
 
     &:not(:last-child) {
         margin-bottom: 0.75em;
+    }
+
+    &:nth-child(odd) {
+        color: rgba(255, 255, 255, 0.75);
     }
 `;
 

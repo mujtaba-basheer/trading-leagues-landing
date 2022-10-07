@@ -11,7 +11,7 @@ import Popup from "../components/Popup";
 import { PopupProps } from '../types';
 
 const Layout = () => {
-    const [formContext, setFormContext] = useState<PopupProps>({ mobile: "", wailist_no: 0, open_modal: !false });
+    const [formContext, setFormContext] = useState<PopupProps>({ mobile: "", wailist_no: 0, open_modal: false });
 
     return <main>
         <Head>
