@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 import { socialData } from '../lib/social';
-import submitHandler from '../lib/handler';
+import { submitHandler } from '../lib/handler';
 import device from '../styles/breapoints';
+import { PopupProps } from '../types';
+import { Dispatch, SetStateAction } from 'react';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -133,11 +135,11 @@ const StyledForm = styled.form`
         }
     }`;
 
-const Footer: () => JSX.Element = () => <StyledSection>
+const Footer = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => <StyledSection>
     <SectionContent>
         <CtaSection>
             <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
-            <StyledForm onSubmit={submitHandler}>
+            <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                 <div>
                     <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                     <input type="submit" value="get early access" />

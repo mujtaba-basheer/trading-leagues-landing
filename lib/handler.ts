@@ -1,8 +1,15 @@
-import { FormEvent, FormEventHandler } from "react";
-import { ApiResponseType } from "../types";
+import {
+  FormEvent,
+  FormEventHandler,
+  createContext,
+  Dispatch,
+  SetStateAction,
+} from "react";
+import { ApiResponseType, PopupProps } from "../types";
 
-const submitHandler: FormEventHandler<HTMLFormElement> = async (
-  event: FormEvent<HTMLFormElement>
+export const submitHandler = async (
+  event: FormEvent<HTMLFormElement>,
+  callback: Dispatch<SetStateAction<PopupProps>>
 ) => {
   event.preventDefault();
   const inputEl: HTMLInputElement | null = (
@@ -26,8 +33,13 @@ const submitHandler: FormEventHandler<HTMLFormElement> = async (
       });
 
       const resp: ApiResponseType = (await req.json()) as ApiResponseType;
-      console.log(resp);
       if (resp.status === "success") {
+        const { waitlist } = resp;
+        callback({
+          mobile: inputEl.value,
+          wailist_no: waitlist,
+          open_modal: true,
+        });
         (event.target as HTMLFormElement).reset();
       }
     } catch (error) {
@@ -36,4 +48,10 @@ const submitHandler: FormEventHandler<HTMLFormElement> = async (
   }
 };
 
-export default submitHandler;
+const formState: PopupProps = {
+  mobile: "",
+  wailist_no: 0,
+  open_modal: false,
+};
+
+export const FormContext = createContext<PopupProps>(formState);

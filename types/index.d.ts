@@ -43,3 +43,9 @@ export type ApiResponseType = {
   waitlist: number;
   invite: 0 | 1;
 };
+
+export type PopupProps = {
+  mobile: string;
+  wailist_no: number;
+  open_modal: boolean;
+};

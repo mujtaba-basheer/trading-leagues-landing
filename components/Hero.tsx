@@ -1,9 +1,10 @@
 import styled, { keyframes } from 'styled-components';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, SetStateAction, Dispatch } from 'react';
 
-import submitHandler from '../lib/handler';
+import { submitHandler } from '../lib/handler';
 import { animateType } from '../public/js/hero';
 import device from '../styles/breapoints';
+import { PopupProps } from '../types';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -156,6 +157,7 @@ const StyledLink = styled.a`
     border-radius: 20px;
     text-decoration: none;
     outline: none;
+    z-index: 2;
 
     @media ${device.mobile} {
         font-size: 0.875rem;
@@ -231,6 +233,7 @@ const ImagesFlex = styled.div`
     align-items: center;
     justify-content: center;
     gap: 1em;
+    z-index: 5;
 
     & img {
         @media ${device.mobile} {
@@ -241,7 +244,7 @@ const ImagesFlex = styled.div`
     }
 `;
 
-const Hero: () => JSX.Element = () => {
+const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => {
     const typeEl = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
@@ -264,7 +267,7 @@ const Hero: () => JSX.Element = () => {
             <MainContent>
                 <h1 ref={typeEl}></h1>
                 <p>TradingLeagues is a first-of-its-kind fantasy trading platform providing a gamified experience of the financial markets.</p>
-                <StyledForm onSubmit={submitHandler}>
+                <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                     <div>
                         <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                         <input type="submit" value="get early access" />

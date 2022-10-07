@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
 import { coinCssDetails, starCssDetails } from '../lib/invite';
-import submitHandler from '../lib/handler';
-import { CssItemProps } from '../types';
+import { submitHandler } from '../lib/handler';
+import { CssItemProps, PopupProps } from '../types';
 import device from '../styles/breapoints';
+import { Dispatch, SetStateAction } from 'react';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -207,7 +208,7 @@ const PositionedImage = styled(Image)`
     width: auto;
 `;
 
-const Invite: () => JSX.Element = () => <StyledSection id="refer-and-earn">
+const Invite = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => <StyledSection id="refer-and-earn">
     <SectionContent>
         <TopSection>
             <BigHeading>
@@ -218,7 +219,7 @@ const Invite: () => JSX.Element = () => <StyledSection id="refer-and-earn">
             <CtaSection>
                 <h3>Refer & Earn!</h3>
                 <p>Invite your friends & family to double the fun and compete for the ultimate Financial Market glory.</p>
-                <StyledForm onSubmit={submitHandler}>
+                <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                     <label htmlFor="mobile">Enter your Whatsapp number to recieve the referral link</label>
                     <div>
                         <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
@@ -241,4 +242,4 @@ const Invite: () => JSX.Element = () => <StyledSection id="refer-and-earn">
     </SectionContent>
 </StyledSection>;
 
-export default Invite;
+export default Invite;;;
