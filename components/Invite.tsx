@@ -222,7 +222,7 @@ const Invite = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Po
                 <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                     <label htmlFor="mobile">Enter your Whatsapp number to recieve the referral link</label>
                     <div>
-                        <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
+                        <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                         <input type="submit" value="send link" />
                     </div>
                 </StyledForm>

@@ -128,7 +128,7 @@ const MainContent = styled.div`
         @media ${device.mobile} {
             font-size: 2.5rem;
             min-height: 48px;
-            border-right: 3px solid;
+            gap: 0.5em;
         }
 
         
@@ -142,12 +142,17 @@ const MainContent = styled.div`
             height: 76.67px;
             position: relative;
 
+            @media ${device.mobile} {
+                height: 48px;
+                width: auto;
+            }
+
             & > div {
                 width: 100%;
                 height: 200%;
                 transform: translateY(0);
-                animation: ${wheel} 1.5s cubic-bezier(0.7, 0.08, 0.03, 0.82) infinite forwards;
-                animation-delay: 1s;
+                animation: ${wheel} 2.5s cubic-bezier(0.7, 0.08, 0.03, 0.82) infinite forwards;
+                animation-delay: 2.5s;
             }
 
             & span {
@@ -231,6 +236,8 @@ const StyledForm = styled.form`
     & div {
         height: 40px;
         position: relative;
+        display: flex;
+        align-items: center;
 
         & input {
             display: inline-block;
@@ -338,7 +345,7 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
                 <p>TradingLeagues is a first-of-its-kind fantasy trading platform providing a gamified experience of the financial markets.</p>
                 <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                     <div>
-                        <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
+                        <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                         <input type="submit" value="get early access" />
                     </div>
                 </StyledForm>

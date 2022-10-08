@@ -143,7 +143,7 @@ const Footer = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Po
             <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
             <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                 <div>
-                    <input type="text" pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
+                    <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                     <input type="submit" value="get early access" />
                 </div>
             </StyledForm>
