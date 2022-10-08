@@ -16,6 +16,38 @@ const Layout = () => {
     return <main>
         <Head>
             <title>Trading Leagues</title>
+            <meta
+                name="title"
+                content="Rain Platforms | The financial markets, reimagined"
+            />
+            <meta
+                name="description"
+                content="Rain Platforms builds technologies that help to remove barriers between people and the financial world."
+            />
+
+            <meta property="og:type" content="website" />
+            <meta property="og:url" content="https://www.rainplatforms.com/" />
+            <meta
+                property="og:title"
+                content="Rain Platforms | The financial markets, reimagined"
+            />
+            <meta
+                property="og:description"
+                content="Rain Platforms builds technologies that help to remove barriers between people and the financial world."
+            />
+            <meta property="og:image" content="%PUBLIC_URL%/rain.png" />
+
+            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:url" content="https://www.rainplatforms.com/" />
+            <meta
+                property="twitter:title"
+                content="Rain Platforms | The financial markets, reimagined"
+            />
+            <meta
+                property="twitter:description"
+                content="Rain Platforms builds technologies that help to remove barriers between people and the financial world."
+            />
+            <meta property="twitter:image" content="%PUBLIC_URL%/rain.png" />
         </Head>
         <Hero setFormContext={setFormContext} />
         <Swiper />

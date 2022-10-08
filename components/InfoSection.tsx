@@ -5,7 +5,7 @@ import device from '../styles/breakpoints';
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.section`
-  background: url(${asset_prefix}/assets/noise-bg-blue.jpeg);
+  background: url(${asset_prefix}/assets/blue-bg-1.png);
   background-size: cover;
   padding: 4em 0;
 `;

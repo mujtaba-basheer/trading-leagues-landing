@@ -1,8 +1,7 @@
 import styled, { keyframes } from 'styled-components';
-import { useRef, useEffect, SetStateAction, Dispatch } from 'react';
+import { SetStateAction, Dispatch, useState, useEffect } from 'react';
 
 import { submitHandler } from '../lib/handler';
-import { animateType } from '../public/js/hero';
 import device from '../styles/breakpoints';
 import { PopupProps } from '../types';
 
@@ -309,11 +308,17 @@ const ImagesFlex = styled.div`
 `;
 
 const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => {
+    const [pageLoaded, setPageLoaded] = useState(false);
 
-    return <StyledSection style={{ height: "100vh" }}>
-        <VideoBackground autoPlay muted loop>
+    useEffect(() => {
+        setPageLoaded(true);
+    }, []);
+
+    return <StyledSection style={{ minHeight: "100vh", backgroundColor: "#191B2B" }}>
+        {pageLoaded && (< VideoBackground autoPlay muted loop>
             <source src={`${asset_prefix}/assets/video.mp4`} type="video/mp4" />
-        </VideoBackground>
+        </VideoBackground>)
+        }
         <StyledBanner>
             <div>
                 <div className="scroll">
