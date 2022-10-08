@@ -51,7 +51,7 @@ const StyledBanner = styled.div`
     }
 
     & > div {
-        height: calc(26px);
+        height: 26px;
         width: 100%;
         max-width: 100vw;
         overflow-x: hidden;
@@ -68,6 +68,10 @@ const StyledBanner = styled.div`
 
             &:not(:first-child) {
                 left: calc(1328px + 3em);
+
+                @media ${device.mobile} {
+                    left: calc(944px + 3em);
+                }
             }
         }
     }
