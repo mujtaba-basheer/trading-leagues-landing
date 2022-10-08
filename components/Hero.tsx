@@ -28,6 +28,16 @@ const VideoBackground = styled.video`
     opacity: 0.1;
 `;
 
+const marquee = keyframes`
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100% - 3em));
+    }
+`;
+
 const StyledBanner = styled.div`
     background-color: #171728;
     text-align: center;
@@ -41,11 +51,35 @@ const StyledBanner = styled.div`
         left: auto;
     }
 
+    & > div {
+        height: calc(26px);
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+        position: relative; 
+
+        & div.scroll {
+            display: flex;
+            gap: 3em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: max-content;
+            animation: ${marquee} 10s linear infinite;
+
+            &:not(:first-child) {
+                left: calc(1328px + 3em);
+            }
+        }
+    }
+
     & h1 {
+        display: inline-block;
         font-size: 1.25rem;
         font-weight: 400;
         font-family: 'Silkscreen', cursive;
         color: #00DF8D;
+        min-width: max-content !important;
 
         @media ${device.mobile} {
             font-size: 0.875rem;
@@ -53,18 +87,17 @@ const StyledBanner = styled.div`
     }
 `;
 
-const blink = keyframes`
+const wheel = keyframes`
     0% {
-        border-right-color: #FFFFFF;
+        transform: translateY(0);
     }
+
     50% {
-        border-right-color: #FFFFFF;
+        transform: translateY(-50%);
     }
-    51% {
-        border-right-color: transparent;
-    }
+
     100% {
-        border-right-color: transparent;
+        transform: translateY(-100%);
     }
 `;
 
@@ -87,9 +120,10 @@ const MainContent = styled.div`
         font-weight: 700;
         color: #FFFFFF;
         min-height: 76.66px;
-        border-right: 5px solid;
-        border-right-color: #FFFFFF;
-        animation: ${blink} 500ms ease-out infinite alternate-reverse;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        perspective: 3000px;
 
         @media ${device.mobile} {
             font-size: 2.5rem;
@@ -97,8 +131,30 @@ const MainContent = styled.div`
             border-right: 3px solid;
         }
 
-        & span {
-            &.w1 {
+        
+
+        & > div {
+            display: inline-block;
+            height: min-content;
+            overflow-y: hidden;
+            transform-style: preserve-3d;
+            width: 200px;
+            height: 76.67px;
+            position: relative;
+
+            & > div {
+                width: 100%;
+                height: 200%;
+                transform: translateY(0);
+                animation: ${wheel} 1.5s cubic-bezier(0.7, 0.08, 0.03, 0.82) infinite forwards;
+                animation-delay: 1s;
+            }
+
+            & span {
+                display: block;
+                height: 50%;
+                top: 0;
+                right: 0;
                 color: #00DF8D;
             }
         }
@@ -246,19 +302,22 @@ const ImagesFlex = styled.div`
 `;
 
 const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => {
-    const typeEl = useRef<HTMLHeadingElement>(null);
-
-    useEffect(() => {
-        const headingEl = typeEl.current;
-        if (headingEl !== null) animateType(headingEl);
-    }, [typeEl.current]);
 
     return <StyledSection style={{ height: "100vh" }}>
         <VideoBackground autoPlay muted loop>
             <source src={`${asset_prefix}/assets/video.mp4`} type="video/mp4" />
         </VideoBackground>
         <StyledBanner>
-            <h1>coming soon on 10th OCtober 2022</h1>
+            <div>
+                <div className="scroll">
+                    <h1>Coming this november to an App Store Near you !</h1>
+                    <h1>Coming this november to an App Store Near you !</h1>
+                </div>
+                <div className="scroll">
+                    <h1>Coming this november to an App Store Near you !</h1>
+                    <h1>Coming this november to an App Store Near you !</h1>
+                </div>
+            </div>
         </StyledBanner>
         <SectionContent>
             <TopSection>
@@ -266,7 +325,16 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
                 <StyledLink href="#refer-and-earn">refer & earn</StyledLink>
             </TopSection>
             <MainContent>
-                <h1 ref={typeEl}></h1>
+                <h1>
+                    <div>
+                        <div>
+                            <span>Game</span>
+                            <span>Trade</span>
+                            <span>Game</span>
+                        </div>
+                    </div>
+                    On!
+                </h1>
                 <p>TradingLeagues is a first-of-its-kind fantasy trading platform providing a gamified experience of the financial markets.</p>
                 <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
                     <div>
@@ -284,7 +352,7 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
                 </ImagesFlex>
             </MainContent>
         </SectionContent>
-    </StyledSection>;
+    </StyledSection >;
 };
 
 export default Hero;

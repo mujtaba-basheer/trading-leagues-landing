@@ -7,7 +7,7 @@ const delay: (time: number) => Promise<null> = (time: number) => {
 };
 
 export const animateType = async (TypeEl: HTMLHeadingElement) => {
-  console.log({ TypeEl });
+  TypeEl.textContent = "";
   const text: TypingDetail[] = [
     {
       w1: "Trade",

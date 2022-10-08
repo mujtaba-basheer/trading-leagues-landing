@@ -26,6 +26,7 @@ const BigHeading = styled.h1`
   line-height: 76px;
   margin-bottom: 0.5em;
   text-align: center;
+  color: #00DF8D;
 
   @media ${device.mobile} {
     font-size: 2.5rem;
@@ -180,7 +181,6 @@ const MainPara = styled.p`
     font-weight: 600;
     margin-bottom: 1.75em;
     text-align: justify;
-    color: #00DF8D;
 
     @media ${device.mobile} {
         font-size: 1rem;
