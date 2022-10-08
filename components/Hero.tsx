@@ -319,7 +319,7 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
     }, []);
 
     return <StyledSection style={{ minHeight: "100vh", backgroundColor: "#191B2B" }}>
-        {pageLoaded && (< VideoBackground autoPlay muted loop>
+        {pageLoaded && (< VideoBackground autoPlay muted loop playsInline>
             <source src={`${asset_prefix}/assets/video.mp4`} type="video/mp4" />
         </VideoBackground>)
         }
