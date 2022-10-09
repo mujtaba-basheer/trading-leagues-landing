@@ -62,8 +62,6 @@ const TabLinks = styled.div`
 `;
 
 const TabLinkItem = styled.button<{ "data-active": boolean; }>`
-    font-size: 1rem;
-    font-weight: 600;
     background: none;
     border: none;
     color: ${props => props["data-active"] ? "#00DF8D" : "#737585"};
@@ -71,6 +69,11 @@ const TabLinkItem = styled.button<{ "data-active": boolean; }>`
     letter-spacing: 0.1em;
     cursor: pointer;
     margin-bottom: 4em;
+
+    & h2 {
+        font-size: 1rem;
+        font-weight: 600;
+    }
 `;
 
 const LeagueMobile = styled.div``;
@@ -255,7 +258,9 @@ const Swiper: () => JSX.Element = () => {
                 Choose from four game formats to get an immersive experience of the financial markets
             </StyledDescription>
             <TabLinks>
-                {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>{x.title}</TabLinkItem>)}
+                {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>
+                    <h2>{x.title}</h2>
+                </TabLinkItem>)}
             </TabLinks>
             {leagueDetails && <MainContent>
                 <LeftSection className={leagueDetails.state}>
@@ -264,7 +269,7 @@ const Swiper: () => JSX.Element = () => {
                     {leagueDetails.paras?.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
                 </LeftSection>
                 <RightSection>
-                    {leagueDetailsData.map((x, i) => <StyledImage className={`${currentTab === i ? "active " + leagueDetails.state : ""}`} key={x.key} src={`${asset_prefix}/assets/leagues/${x.key}.svg`} />)}
+                    {leagueDetailsData.map((x, i) => <StyledImage className={`${currentTab === i ? "active " + leagueDetails.state : ""}`} key={x.key} alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />)}
                 </RightSection>
             </MainContent>}
             <MainContentMobile>
@@ -283,7 +288,7 @@ const Swiper: () => JSX.Element = () => {
                         </button>
                     </TabLinkItemMobile>
                     <LeagueContentMobile>
-                        <StyledImage src={`${asset_prefix}/assets/leagues/${x.key}.svg`} />
+                        <StyledImage alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
                         <StyledHeading color={x.color}>{x.heading}</StyledHeading>
                         <MainPara>{x.main}</MainPara>
                         {x.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}

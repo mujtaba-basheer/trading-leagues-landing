@@ -15,40 +15,49 @@ const Layout = () => {
 
     return <main>
         <Head>
-            <title>Trading Leagues</title>
+            <title>TradingLeagues- Your fantasy stock market game. Play, Win & Learn.</title>
+            <meta name="robots" content="index, follow" />
             <meta
                 name="title"
-                content="Rain Platforms | The financial markets, reimagined"
+                content="TradingLeagues- Your fantasy stock market game. Play, Win & Learn."
             />
             <meta
                 name="description"
-                content="Rain Platforms builds technologies that help to remove barriers between people and the financial world."
+                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn!"
             />
 
             <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.rainplatforms.com/" />
+            <meta property="og:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="og:title"
-                content="Rain Platforms | The financial markets, reimagined"
+                content="TradingLeagues- Your fantasy stock market game. Play, Win & Learn."
             />
             <meta
                 property="og:description"
-                content="Rain Platforms builds technologies that help to remove barriers between people and the financial world."
+                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn!"
             />
-            <meta property="og:image" content="%PUBLIC_URL%/rain.png" />
+            <meta property="og:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.svg" />
 
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content="https://www.rainplatforms.com/" />
+            <meta property="twitter:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="twitter:title"
-                content="Rain Platforms | The financial markets, reimagined"
+                content="TradingLeagues- Your fantasy stock market game. Play, Win & Learn."
             />
             <meta
                 property="twitter:description"
-                content="Rain Platforms builds technologies that help to remove barriers between people and the financial world."
+                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn!"
             />
-            <meta property="twitter:image" content="%PUBLIC_URL%/rain.png" />
+            <meta property="twitter:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.svg" />
         </Head>
+        <header style={{ display: "none", visibility: "hidden" }}>
+            <h1>
+                TradingLeages is India’s best fantasy stock market trading game. Compete, Play, Learn and Earn stock market trading and investing in a fun, real-time, stree-free experience.
+            </h1>
+            <h1>
+                Join a Trading League on TradingLeagues Now. Play stock market fantasy game and win!
+            </h1>
+        </header>
         <Hero setFormContext={setFormContext} />
         <Swiper />
         <InfoSection />

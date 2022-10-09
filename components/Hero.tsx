@@ -76,7 +76,7 @@ const StyledBanner = styled.div`
         }
     }
 
-    & h1 {
+    & h2 {
         display: inline-block;
         font-size: 1.25rem;
         font-weight: 400;
@@ -158,7 +158,7 @@ const MainContent = styled.div`
                 animation-delay: 2.5s;
             }
 
-            & span {
+            & h1 {
                 display: block;
                 height: 50%;
                 top: 0;
@@ -319,6 +319,11 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
     }, []);
 
     return <StyledSection style={{ minHeight: "100vh", backgroundColor: "#191B2B" }}>
+        <header style={{ display: "none", visibility: "hidden" }}>
+            <h1>
+                The TradingLeagues App available on google playstore, apple app store
+            </h1>
+        </header>
         {pageLoaded && (< VideoBackground autoPlay muted loop playsInline>
             <source src={`${asset_prefix}/assets/video.mp4`} type="video/mp4" />
         </VideoBackground>)
@@ -326,27 +331,27 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
         <StyledBanner>
             <div>
                 <div className="scroll">
-                    <h1>Coming this november to an App Store Near you !</h1>
-                    <h1>Coming this november to an App Store Near you !</h1>
+                    <h2>Coming this November to an App Store Near you!</h2>
+                    <h2>Coming this November to an App Store Near you!</h2>
                 </div>
                 <div className="scroll">
-                    <h1>Coming this november to an App Store Near you !</h1>
-                    <h1>Coming this november to an App Store Near you !</h1>
+                    <h2>Coming this November to an App Store Near you!</h2>
+                    <h2>Coming this November to an App Store Near you!</h2>
                 </div>
             </div>
         </StyledBanner>
         <SectionContent>
             <TopSection>
-                <img src={`${asset_prefix}/assets/logo.svg`} alt="logo" />
+                <img src={`${asset_prefix}/assets/TradingLeagues_Logo.svg`} alt="TradingLeagues the best stock market game app" />
                 <StyledLink href="#refer-and-earn">refer & earn</StyledLink>
             </TopSection>
             <MainContent>
                 <h1>
                     <div>
                         <div>
-                            <span>Game</span>
-                            <span>Trade</span>
-                            <span>Game</span>
+                            <h1>Game</h1>
+                            <h1>Trade</h1>
+                            <h1>Game</h1>
                         </div>
                     </div>
                     On!

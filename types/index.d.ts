@@ -28,6 +28,7 @@ export type LeagueDetailsType = {
   main: string;
   paras: string[];
   color: string;
+  img_file: string;
   state?: string;
 };
 

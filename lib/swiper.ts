@@ -31,6 +31,7 @@ export const leagueDetailsData: LeagueDetailsType[] = [
       "Compete with friends in games ranging from as short as 10 minutes to as long as a day.",
     ],
     color: "#F38665",
+    img_file: "BattleLeagues_on_TradingLeagues",
   },
   {
     heading: "Target Leagues",
@@ -43,6 +44,7 @@ export const leagueDetailsData: LeagueDetailsType[] = [
       "The winning price bracket walks away with the prize pool! More the players, the larger the prize pool!",
     ],
     color: "#F5CC51",
+    img_file: "TargetLeagues_on_TradingLeagues",
   },
   {
     heading: "Classic Leagues",
@@ -54,6 +56,7 @@ export const leagueDetailsData: LeagueDetailsType[] = [
       "Get started with free games or paid games for as low as ₹25!",
     ],
     color: "#FFC0D5",
+    img_file: "ClassicLeagues_on_TradingLeagues",
   },
   {
     heading: "Selection Leagues",
@@ -66,5 +69,6 @@ export const leagueDetailsData: LeagueDetailsType[] = [
       "Make real money without using capital or a brokerage account.",
     ],
     color: "#74D5FF",
+    img_file: "SelectionLeagues_on_TradingLeagues",
   },
 ];

@@ -7,6 +7,14 @@ export default function Document() {
     return (
         <Html onScroll={() => console.log("d")}>
             <Head>
+                <Script strategy="lazyOnload" src="https://www.googletagmanager.com/gtag/js?id=G-B840N99HCC"></Script>
+                <Script strategy="lazyOnload">
+                    {`window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-B840N99HCC');`}
+                </Script>
                 <link key="preconnect" rel="preconnect" href="https://fonts.googleapis.com" />
                 <link key="crossorigin" rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
                 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Silkscreen&display=swap" rel="stylesheet" />
