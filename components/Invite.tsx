@@ -41,7 +41,7 @@ const BottomSection = styled.div`
   }
 `;
 
-const BigHeading = styled.h1`
+const BigHeading = styled.h2`
   color: #15182C;
   font-size: 4rem;
   font-weight: 700;
@@ -220,7 +220,7 @@ const Invite = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Po
                 <h3>Refer & Earn!</h3>
                 <p>Invite your friends & family to double the fun and compete for the ultimate Financial Market glory.</p>
                 <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
-                    <label htmlFor="mobile">Enter your Whatsapp number to recieve the referral link</label>
+                    <label htmlFor="mobile">Enter your Whatsapp number to receive the referral link</label>
                     <div>
                         <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
                         <input type="submit" value="send link" />

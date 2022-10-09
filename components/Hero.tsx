@@ -76,7 +76,7 @@ const StyledBanner = styled.div`
         }
     }
 
-    & h2 {
+    & h2, span {
         display: inline-block;
         font-size: 1.25rem;
         font-weight: 400;
@@ -158,7 +158,7 @@ const MainContent = styled.div`
                 animation-delay: 2.5s;
             }
 
-            & h1 {
+            & span {
                 display: block;
                 height: 50%;
                 top: 0;
@@ -319,10 +319,16 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
     }, []);
 
     return <StyledSection style={{ minHeight: "100vh", backgroundColor: "#191B2B" }}>
-        <header style={{ display: "none", visibility: "hidden" }}>
-            <h1>
-                The TradingLeagues App available on google playstore, apple app store
+        <header>
+            <h1 style={{ display: "none", visibility: "hidden" }}>
+                TradingLeages is India’s best fantasy stock market trading game. Compete, Play, Learn and Earn stock market trading and investing in a fun, real-time, stree-free experience.
             </h1>
+            <h2>
+                Join a Trading League on TradingLeagues Now. Play stock market fantasy game and win!
+            </h2>
+            <h3>
+                The TradingLeagues App available on google playstore, apple app store
+            </h3>
         </header>
         {pageLoaded && (< VideoBackground autoPlay muted loop playsInline>
             <source src={`${asset_prefix}/assets/video.mp4`} type="video/mp4" />
@@ -331,12 +337,12 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
         <StyledBanner>
             <div>
                 <div className="scroll">
-                    <h2>Coming this November to an App Store Near you!</h2>
-                    <h2>Coming this November to an App Store Near you!</h2>
+                    <span>Coming this November to an App Store Near you!</span>
+                    <span>Coming this November to an App Store Near you!</span>
                 </div>
                 <div className="scroll">
-                    <h2>Coming this November to an App Store Near you!</h2>
-                    <h2>Coming this November to an App Store Near you!</h2>
+                    <span>Coming this November to an App Store Near you!</span>
+                    <span>Coming this November to an App Store Near you!</span>
                 </div>
             </div>
         </StyledBanner>
@@ -349,9 +355,9 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
                 <h1>
                     <div>
                         <div>
-                            <h1>Game</h1>
-                            <h1>Trade</h1>
-                            <h1>Game</h1>
+                            <span>Game</span>
+                            <span>Trade</span>
+                            <span>Game</span>
                         </div>
                     </div>
                     On!

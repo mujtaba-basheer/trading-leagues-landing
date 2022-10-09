@@ -15,26 +15,26 @@ const Layout = () => {
 
     return <main>
         <Head>
-            <title>TradingLeagues- Your fantasy stock market game. Play, Win & Learn.</title>
+            <title>TradingLeagues: Fantasy stock market game. Play, Win & Learn</title>
             <meta name="robots" content="index, follow" />
             <meta
                 name="title"
-                content="TradingLeagues- Your fantasy stock market game. Play, Win & Learn."
+                content="TradingLeagues: Fantasy stock market game. Play, Win & Learn"
             />
             <meta
                 name="description"
-                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn!"
+                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
             />
 
             <meta property="og:type" content="website" />
             <meta property="og:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="og:title"
-                content="TradingLeagues- Your fantasy stock market game. Play, Win & Learn."
+                content="TradingLeagues: Fantasy stock market game. Play, Win & Learn"
             />
             <meta
                 property="og:description"
-                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn!"
+                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
             />
             <meta property="og:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.svg" />
 
@@ -42,11 +42,11 @@ const Layout = () => {
             <meta property="twitter:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="twitter:title"
-                content="TradingLeagues- Your fantasy stock market game. Play, Win & Learn."
+                content="TradingLeagues: Fantasy stock market game. Play, Win & Learn"
             />
             <meta
                 property="twitter:description"
-                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn!"
+                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
             />
             <meta property="twitter:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.svg" />
         </Head>

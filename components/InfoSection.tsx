@@ -34,7 +34,7 @@ const RightSection = styled.div`
   grid-column: 7 / 12;
 `;
 
-const BigHeading = styled.h1`
+const BigHeading = styled.h2`
   color: #00DF8D;
   font-size: 4rem;
   font-weight: 700;

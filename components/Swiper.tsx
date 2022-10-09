@@ -19,7 +19,7 @@ const SectionContent = styled.div`
   width: 90vw;
 `;
 
-const BigHeading = styled.h1`
+const BigHeading = styled.h2`
   color: #FFFFFF;
   font-size: 4rem;
   font-weight: 700;
@@ -62,6 +62,8 @@ const TabLinks = styled.div`
 `;
 
 const TabLinkItem = styled.button<{ "data-active": boolean; }>`
+    font-size: 1rem;
+    font-weight: 600;
     background: none;
     border: none;
     color: ${props => props["data-active"] ? "#00DF8D" : "#737585"};
@@ -69,11 +71,6 @@ const TabLinkItem = styled.button<{ "data-active": boolean; }>`
     letter-spacing: 0.1em;
     cursor: pointer;
     margin-bottom: 4em;
-
-    & h2 {
-        font-size: 1rem;
-        font-weight: 600;
-    }
 `;
 
 const LeagueMobile = styled.div``;
@@ -259,7 +256,7 @@ const Swiper: () => JSX.Element = () => {
             </StyledDescription>
             <TabLinks>
                 {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>
-                    <h2>{x.title}</h2>
+                    {x.title}
                 </TabLinkItem>)}
             </TabLinks>
             {leagueDetails && <MainContent>
