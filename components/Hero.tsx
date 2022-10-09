@@ -319,8 +319,8 @@ const Hero = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<Popu
     }, []);
 
     return <StyledSection style={{ minHeight: "100vh", backgroundColor: "#191B2B" }}>
-        <header>
-            <h1 style={{ display: "none", visibility: "hidden" }}>
+        <header style={{ display: "none", visibility: "hidden" }}>
+            <h1>
                 TradingLeages is India’s best fantasy stock market trading game. Compete, Play, Learn and Earn stock market trading and investing in a fun, real-time, stree-free experience.
             </h1>
             <h2>
