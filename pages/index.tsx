@@ -71,7 +71,7 @@ const Layout = () => {
 					content="The best fantasy stock market game app! Choose from four stock market games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
 				/>
 				<meta
-					property="og:image"
+					property="og:image:secure_url"
 					content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png"
 				/>
 
@@ -87,7 +87,7 @@ const Layout = () => {
 					content="The best fantasy stock market game app! Choose from four stock market games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
 				/>
 				<meta
-					property="twitter:image"
+					property="twitter:image:secure_url"
 					content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png"
 				/>
 			</Head>
