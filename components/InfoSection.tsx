@@ -5,9 +5,9 @@ import device from '../styles/breakpoints';
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.section`
-  background: url(${asset_prefix}/assets/blue-bg-1.png);
+  background: url(${asset_prefix}/assets/noise.png), #2031AE;
   background-size: cover;
-  padding: 4em 0;
+  padding: 6em 0;
 `;
 
 const SectionContent = styled.div`
@@ -88,7 +88,6 @@ const InfoItem = styled.li`
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 28px;
-    text-align: justify;
 
     @media ${device.mobile} {
       font-size: 1rem;

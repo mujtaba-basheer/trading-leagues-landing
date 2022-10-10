@@ -4,44 +4,44 @@ import Script from "next/script";
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function Document() {
-  return (
-    <Html onScroll={() => console.log("d")}>
-      <Head>
-        <Script
-          strategy="lazyOnload"
-          src="https://www.googletagmanager.com/gtag/js?id=G-B840N99HCC"
-        ></Script>
-        <Script strategy="lazyOnload">
-          {`window.dataLayer = window.dataLayer || [];
+    return (
+        <Html onScroll={() => console.log("d")}>
+            <Head>
+                <Script
+                    strategy="lazyOnload"
+                    src="https://www.googletagmanager.com/gtag/js?id=G-B840N99HCC"
+                ></Script>
+                <Script strategy="lazyOnload">
+                    {`window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
                     gtag('config', 'G-B840N99HCC');`}
-        </Script>
-        <link
-          key="preconnect"
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          key="crossorigin"
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Silkscreen&display=swap"
-          rel="stylesheet"
-        />
-        <link href={`.${asset_prefix}/styles/global.css`} rel="stylesheet" />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          sizes="16x16"
-          href={`.${asset_prefix}/favicon.ico`}
-        />
-        <style>
-          {`body {
+                </Script>
+                <link
+                    key="preconnect"
+                    rel="preconnect"
+                    href="https://fonts.googleapis.com"
+                />
+                <link
+                    key="crossorigin"
+                    rel="preconnect"
+                    href="https://fonts.gstatic.com"
+                    crossOrigin="true"
+                />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;1,500&family=Silkscreen&display=swap"
+                    rel="stylesheet"
+                />
+                <link href={`.${asset_prefix}/styles/global.css`} rel="stylesheet" />
+                <link
+                    rel="icon"
+                    type="image/x-icon"
+                    sizes="16x16"
+                    href={`.${asset_prefix}/favicon.ico`}
+                />
+                <style>
+                    {`body {
                 background-color: #191b2b;
             }
 
@@ -64,7 +64,7 @@ export default function Document() {
                 font-size: 1.25rem;
                 font-weight: 400;
                 font-family: "Silkscreen", cursive;
-                color: #00df8d;
+                color: #171728;
                 min-width: max-content !important;
             }
 
@@ -74,6 +74,7 @@ export default function Document() {
                 max-width: 100vw;
                 overflow-x: hidden;
                 position: relative;
+                display: none;
             }
 
             .banner > div div.scroll {
@@ -86,7 +87,7 @@ export default function Document() {
             }
 
             .banner > div div.scroll:not(:first-child) {
-                left: calc(1328px + 3em);
+                left: calc(1434px + 3em);
             }
 
             @media screen and (max-width: 428px) {
@@ -163,7 +164,7 @@ export default function Document() {
             }
 
             .hero-main h1 {
-                font-size: 4rem !important;
+                font-size: 4rem;
                 font-weight: 700;
                 color: #ffffff;
                 min-height: 76.66px;
@@ -178,7 +179,7 @@ export default function Document() {
                 height: min-content;
                 overflow-y: hidden;
                 transform-style: preserve-3d;
-                width: 200px;
+                width: 185px;
                 height: 76.67px;
                 position: relative;
             }
@@ -319,12 +320,12 @@ export default function Document() {
                 }
             }
 `}
-        </style>
-      </Head>
-      <body>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  );
+                </style>
+            </Head>
+            <body>
+                <Main />
+                <NextScript />
+            </body>
+        </Html>
+    );
 }

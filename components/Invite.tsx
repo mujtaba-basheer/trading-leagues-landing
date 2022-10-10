@@ -12,7 +12,7 @@ const Image = (props: CssItemProps & { src: string; alt: string; }) => <img {...
 
 const StyledSection = styled.section`
   background-color: #00DF8D;
-  padding: 4em 0;
+  padding: 6em 0;
 `;
 
 const SectionContent = styled.div`
@@ -148,7 +148,7 @@ const StyledForm = styled.form`
 const AdSection = styled.div`
     background-color: #FFFFFF;
     border: 10px solid #006640;
-    margin-bottom: -4em;
+    margin-bottom: -6em;
     border-bottom: none;
     border-radius: 40px 0 0 0;
     width: 355px;

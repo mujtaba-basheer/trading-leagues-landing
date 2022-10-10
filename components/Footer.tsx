@@ -9,7 +9,8 @@ import { Dispatch, SetStateAction } from 'react';
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.footer`
-  background-color: #191B2A;
+  background: url(${asset_prefix}/assets/noise.png), #191B2A;
+  background-size: cover;
   padding: 4em 0;
 `;
 

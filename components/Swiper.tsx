@@ -7,8 +7,9 @@ import device from '../styles/breakpoints';
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const StyledSection = styled.section`
-  background-color: #191B2B;
-  padding: 4em 0;
+  background: url(${asset_prefix}/assets/noise.png), #191B2B;
+  background-size: cover;
+  padding: 6em 0;
 
   @media ${device.mobile} {
   }
@@ -54,7 +55,7 @@ const TabLinks = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.75em;
+    gap: 2.5em;
 
     @media ${device.mobile} {
         display: none;
@@ -180,7 +181,6 @@ const MainPara = styled.p`
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 1.75em;
-    text-align: justify;
 
     @media ${device.mobile} {
         font-size: 1rem;
@@ -192,7 +192,6 @@ const ShortPara = styled.p`
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 28px;
-    text-align: justify;
 
     @media ${device.mobile} {
         font-size: 1rem;
@@ -201,10 +200,6 @@ const ShortPara = styled.p`
 
     &:not(:last-child) {
         margin-bottom: 0.75em;
-    }
-
-    &:nth-child(odd) {
-        color: rgba(255, 255, 255, 0.75);
     }
 `;
 

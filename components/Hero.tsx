@@ -56,6 +56,7 @@ const StyledBanner = styled.div`
     max-width: 100vw;
     overflow-x: hidden;
     position: relative;
+    display: block;
 
     & div.scroll {
       display: flex;
@@ -67,7 +68,7 @@ const StyledBanner = styled.div`
       animation: ${marquee} 10s linear infinite;
 
       &:not(:first-child) {
-        left: calc(1328px + 3em);
+        left: calc(1434px + 3em);
 
         @media ${device.mobile} {
           left: calc(944px + 3em);
@@ -140,7 +141,7 @@ const MainContent = styled.div`
       height: min-content;
       overflow-y: hidden;
       transform-style: preserve-3d;
-      width: 200px;
+      width: 185px;
       height: 76.67px;
       position: relative;
 
@@ -153,8 +154,7 @@ const MainContent = styled.div`
         width: 100%;
         height: 200%;
         transform: translateY(0);
-        animation: ${wheel} 2.5s cubic-bezier(0.7, 0.08, 0.03, 0.82) infinite
-          forwards;
+        animation: ${wheel} 2.5s cubic-bezier(0.7, 0.08, 0.03, 0.82) infinite forwards;
         animation-delay: 2.5s;
       }
 
@@ -349,12 +349,15 @@ const Hero = ({
       <StyledBanner className="banner">
         <div>
           <div className="scroll" style={{ display: "flex" }}>
-            <span>Coming this November to an App Store Near you!</span>
-            <span>Coming this November to an App Store Near you!</span>
+            <span>Launching this November</span>
+            <span>Launching this November</span>
+            <span>Launching this November</span>
+            <span>Launching this November</span>
           </div>
           <div className="scroll" style={{ display: "flex" }}>
-            <span>Coming this November to an App Store Near you!</span>
-            <span>Coming this November to an App Store Near you!</span>
+            <span>Launching this November</span>
+            <span>Launching this November</span>
+            <span>Launching this November</span>
           </div>
         </div>
       </StyledBanner>
