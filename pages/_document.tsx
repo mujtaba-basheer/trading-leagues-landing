@@ -7,16 +7,16 @@ export default function Document() {
     return (
         <Html onScroll={() => console.log("d")}>
             <Head>
-                <script
+                <Script strategy="beforeInteractive"
                     src="https://www.googletagmanager.com/gtag/js?id=G-B840N99HCC"
-                ></script>
-                <script>
+                ></Script>
+                <Script strategy="beforeInteractive">
                     {`window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
                     gtag('config', 'G-B840N99HCC');`}
-                </script>
+                </Script>
                 <link
                     key="preconnect"
                     rel="preconnect"

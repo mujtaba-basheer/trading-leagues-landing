@@ -36,7 +36,7 @@ const Layout = () => {
                 property="og:description"
                 content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
             />
-            <meta property="og:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.svg" />
+            <meta property="og:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png" />
 
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content="https://www.tradingleagues.in/" />
@@ -48,7 +48,7 @@ const Layout = () => {
                 property="twitter:description"
                 content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
             />
-            <meta property="twitter:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.svg" />
+            <meta property="twitter:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png" />
         </Head>
         <header style={{ display: "none", visibility: "hidden" }}>
             <h1>
