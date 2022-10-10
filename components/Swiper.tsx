@@ -74,42 +74,12 @@ const TabLinkItem = styled.button<{ "data-active": boolean; }>`
     margin-bottom: 4em;
 `;
 
-const LeagueMobile = styled.div``;
-
 const LeagueContentMobile = styled.div`
     color: #FFFFFF;
-    max-height: 0;
-    overflow: hidden;
     padding: 0;
-`;
-
-const TabLinkItemMobile = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5em 0;
-
-    & h2 {
-        font-size: 1rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #737585;
-    }
-
-    & button {
-        background: none;
-        border: none;
-    }
-
-    &.active {
-        & h2 {
-            color: #00DF8D;
-        }
-
-        &.active + div {
-            padding: 1em 0;
-            max-height: none;
-        }
+    
+    &:not(:last-child) {
+        margin-bottom: 3em;
     }
 `;
 
@@ -174,6 +144,7 @@ const StyledHeading = styled.h2`
 
     @media ${device.mobile} {
         font-size: 1.5rem;
+        text-align: center;
     }
 `;
 
@@ -185,6 +156,7 @@ const MainPara = styled.p`
     @media ${device.mobile} {
         font-size: 1rem;
         max-width: none;
+        text-align: center;
     }
 `;
 
@@ -196,10 +168,16 @@ const ShortPara = styled.p`
     @media ${device.mobile} {
         font-size: 1rem;
         max-width: none;
+        text-align: center;
+        line-height: normal;
     }
 
     &:not(:last-child) {
         margin-bottom: 0.75em;
+
+        @media ${device.mobile} {
+            margin-bottom: 1.25em;
+        }
     }
 `;
 
@@ -217,6 +195,7 @@ const StyledImage = styled.img`
         position: relative;
         width: 60%;
         height: auto;
+        margin: 0 auto;
         margin-bottom: 1.5em;
         opacity: 1;
     }
@@ -265,27 +244,12 @@ const Swiper: () => JSX.Element = () => {
                 </RightSection>
             </MainContent>}
             <MainContentMobile>
-                {leagueDetailsData.map((x, i) => <LeagueMobile key={x.key}>
-                    <TabLinkItemMobile className={currentTab === i ? "active" : ""}>
-                        <h2>{x.heading}</h2>
-                        <button onClick={(ev) => {
-                            let setIndex = i;
-                            if (currentTab === i) setIndex = -1;
-                            setCurrentTab(setIndex);
-                            setTimeout(() => {
-                                (ev.target as HTMLElement).scrollIntoView({ behavior: "smooth" });
-                            }, 200);
-                        }}>
-                            <img src={`${asset_prefix}/assets/leagues/arrow-${currentTab === i ? "up" : "down"}.svg`} />
-                        </button>
-                    </TabLinkItemMobile>
-                    <LeagueContentMobile>
-                        <StyledImage alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
-                        <StyledHeading color={x.color}>{x.heading}</StyledHeading>
-                        <MainPara>{x.main}</MainPara>
-                        {x.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
-                    </LeagueContentMobile>
-                </LeagueMobile>)}
+                {leagueDetailsData.map((x, i) => <LeagueContentMobile key={x.key}>
+                    <StyledImage alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
+                    <StyledHeading color={x.color}>{x.heading}</StyledHeading>
+                    <MainPara>{x.main}</MainPara>
+                    {x.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
+                </LeagueContentMobile>)}
             </MainContentMobile>
         </SectionContent>
     </StyledSection>;

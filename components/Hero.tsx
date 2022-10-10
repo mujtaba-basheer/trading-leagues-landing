@@ -17,6 +17,10 @@ const SectionContent = styled.div`
   padding: 4em 0;
   background: rgba(5, 8, 26, 0.85);
   background-size: cover;
+
+  @media ${device.mobile} {
+    padding: 2em 0;
+  }
 `;
 
 const VideoBackground = styled.video`
@@ -71,14 +75,13 @@ const StyledBanner = styled.div`
         left: calc(1434px + 3em);
 
         @media ${device.mobile} {
-          left: calc(944px + 3em);
+          left: calc(1047px + 3em);
         }
       }
     }
   }
 
-  & h2,
-  span {
+  & span {
     display: inline-block;
     font-size: 1.25rem;
     font-weight: 400;
@@ -110,11 +113,12 @@ const MainContent = styled.div`
   height: calc(100vh - 90px - 2.5em);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 2em;
 
   @media ${device.mobile} {
-    height: calc(100vh - 74px - 8.5em);
+    height: calc(100vh - 74px - 6.5em);
     width: 90vw;
     margin: 0 auto;
     gap: 10vh;
@@ -355,6 +359,7 @@ const Hero = ({
             <span>Launching this November</span>
           </div>
           <div className="scroll" style={{ display: "flex" }}>
+            <span>Launching this November</span>
             <span>Launching this November</span>
             <span>Launching this November</span>
             <span>Launching this November</span>

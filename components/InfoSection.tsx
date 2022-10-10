@@ -7,7 +7,7 @@ const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const StyledSection = styled.section`
   background: url(${asset_prefix}/assets/noise.png), #2031AE;
   background-size: cover;
-  padding: 6em 0;
+  padding: 7em 0;
 `;
 
 const SectionContent = styled.div`
@@ -77,7 +77,7 @@ const InfoItem = styled.li`
   & h3 {
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 0.35em;
+    margin-bottom: 0.6em;
 
     @media ${device.mobile} {
       font-size: 1.2rem;
@@ -95,7 +95,11 @@ const InfoItem = styled.li`
   }
 
   &:not(:last-child) {
-    margin-bottom: 3em;
+    margin-bottom: 4.5em;
+
+    @media ${device.mobile} {
+      margin-bottom: 2.5em;
+    }
   }
 `;
 

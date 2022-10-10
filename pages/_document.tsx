@@ -7,17 +7,16 @@ export default function Document() {
     return (
         <Html onScroll={() => console.log("d")}>
             <Head>
-                <Script
-                    strategy="lazyOnload"
+                <script
                     src="https://www.googletagmanager.com/gtag/js?id=G-B840N99HCC"
-                ></Script>
-                <Script strategy="lazyOnload">
+                ></script>
+                <script>
                     {`window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
                     gtag('config', 'G-B840N99HCC');`}
-                </Script>
+                </script>
                 <link
                     key="preconnect"
                     rel="preconnect"
@@ -102,7 +101,7 @@ export default function Document() {
                 }
 
                 .banner > div div.scroll:not(:first-child) {
-                    left: calc(944px + 3em);
+                    left: calc(1047px + 3em);
                 }
             }
 

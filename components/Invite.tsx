@@ -157,7 +157,7 @@ const AdSection = styled.div`
 
     @media ${device.mobile} {
         width: 80%;
-        margin: 0 auto -4em auto;
+        margin: 0 auto -6em auto;
         padding: 1.5em 1.5em 6em 1.5em;
     }
 
