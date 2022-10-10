@@ -5,6 +5,7 @@ import { submitHandler } from '../lib/handler';
 import { CssItemProps, PopupProps } from '../types';
 import device from '../styles/breakpoints';
 import { Dispatch, SetStateAction } from 'react';
+import Loader from './ui/Loader';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -130,6 +131,12 @@ const StyledForm = styled.form`
                     left: 0;
                     width: 90%;
                 }
+
+                &.failure {
+                    &::placeholder {
+                        color: red;
+                    }
+                }
             }
 
             &[type="submit"] {
@@ -141,6 +148,26 @@ const StyledForm = styled.form`
                 text-transform: uppercase;
                 color: #FFFFFF;
                 cursor: pointer;
+            }
+        }
+
+        & > span {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            border-radius: 20px;
+            left: -20px;
+            background-color: #2031AE;
+            width: 103.77px;
+            right: 0;
+            bottom: 0;
+            padding: 5px 0;
+
+            @media ${device.mobile} {
+                position: absolute;
+                left: auto;
             }
         }
     }`;
@@ -208,38 +235,49 @@ const PositionedImage = styled(Image)`
     width: auto;
 `;
 
-const Invite = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => <StyledSection id="refer-and-earn">
-    <SectionContent>
-        <TopSection>
-            <BigHeading>
-                Invite friends over and compete for the ultimate Financial Market glory
-            </BigHeading>
-        </TopSection>
-        <BottomSection>
-            <CtaSection>
-                <h3>Refer & Earn!</h3>
-                <p>Invite your friends & family to double the fun and compete for the ultimate Financial Market glory.</p>
-                <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
-                    <label htmlFor="mobile">Enter your Whatsapp number to receive the referral link</label>
-                    <div>
-                        <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
-                        <input type="submit" value="send link" />
-                    </div>
-                </StyledForm>
-            </CtaSection>
-            <AdSection>
-                <h3>
-                    ₹100 <span>Game Credit</span>
-                </h3>
-                <p>Get ₹100 when you sign up</p>
-                <p>Get ₹100 for every friend that downloads the app.
-                </p>
+const Invite = ({
+    formContext,
+    setFormContext,
+}: {
+    formContext: PopupProps;
+    setFormContext: Dispatch<SetStateAction<PopupProps>>;
+}) => <StyledSection id="refer-and-earn">
+        <SectionContent>
+            <TopSection>
+                <BigHeading>
+                    Invite friends over and compete for the ultimate Financial Market glory
+                </BigHeading>
+            </TopSection>
+            <BottomSection>
+                <CtaSection>
+                    <h3>Refer & Earn!</h3>
+                    <p>Invite your friends & family to double the fun and compete for the ultimate Financial Market glory.</p>
+                    <StyledForm onSubmit={(ev) => submitHandler(ev, 1, setFormContext)}>
+                        <label htmlFor="mobile">Enter your Whatsapp number to receive the referral link</label>
+                        <div>
+                            <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder={
+                                formContext?.status?.[1] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                            }
+                                className={formContext?.status?.[1]} name="mobile" id="mobile" />
+                            {formContext?.loading?.[1] ? <span>
+                                <Loader color="#2031AE" />
+                            </span> : <input type="submit" value="send link" />}
+                        </div>
+                    </StyledForm>
+                </CtaSection>
+                <AdSection>
+                    <h3>
+                        ₹100 <span>Game Credit</span>
+                    </h3>
+                    <p>Get ₹100 when you sign up</p>
+                    <p>Get ₹100 for every friend that downloads the app.
+                    </p>
 
-                {coinCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/coin.svg`} alt="icon" key={i} {...x} />)}
-                {starCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/star.svg`} alt="icon" key={i} {...x} />)}
-            </AdSection>
-        </BottomSection>
-    </SectionContent>
-</StyledSection>;
+                    {coinCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/coin.svg`} alt="icon" key={i} {...x} />)}
+                    {starCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/star.svg`} alt="icon" key={i} {...x} />)}
+                </AdSection>
+            </BottomSection>
+        </SectionContent>
+    </StyledSection>;
 
 export default Invite;;;

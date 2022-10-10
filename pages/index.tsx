@@ -9,7 +9,7 @@ import InfoSection from "../components/InfoSection";
 import Mockups from "../components/Mockups";
 import Invite from "../components/Invite";
 import Footer from "../components/Footer";
-import Popup from "../components/Popup";
+import Popup from "../components/ui/Popup";
 import { PopupProps } from "../types";
 
 const Layout = () => {
@@ -17,6 +17,8 @@ const Layout = () => {
         mobile: "",
         wailist_no: 0,
         open_modal: false,
+        status: ["", "", ""],
+        loading: [false, false, false]
     });
 
     return (
@@ -102,12 +104,12 @@ const Layout = () => {
                     game and win!
                 </h1>
             </header>
-            <Hero setFormContext={setFormContext} />
+            <Hero formContext={formContext} setFormContext={setFormContext} />
             <Swiper />
             <InfoSection />
             <Mockups />
-            <Invite setFormContext={setFormContext} />
-            <Footer setFormContext={setFormContext} />
+            <Invite formContext={formContext} setFormContext={setFormContext} />
+            <Footer formContext={formContext} setFormContext={setFormContext} />
             {formContext.open_modal && (
                 <Popup formContext={formContext} setFormContext={setFormContext} />
             )}

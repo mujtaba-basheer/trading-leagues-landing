@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { SetStateAction, Dispatch, useState, useEffect } from "react";
 
+import Loader from "./ui/Loader";
 import { submitHandler } from "../lib/handler";
 import device from "../styles/breakpoints";
 import { PopupProps } from "../types";
@@ -268,6 +269,12 @@ const StyledForm = styled.form`
           color: #9ea0aa;
         }
 
+        &.failure {
+          &::placeholder {
+            color: red;
+          }
+        }
+
         @media ${device.mobile} {
           font-size: 0.875rem;
           left: 0;
@@ -296,6 +303,28 @@ const StyledForm = styled.form`
         }
       }
     }
+
+    & > span {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 1.5em;
+      border-radius: 20px;
+      left: -20px;
+      background-color: #00df8d;
+      width: 188.55px;
+      right: 0;
+      bottom: 0;
+      padding: 5px 0;
+
+      @media ${device.mobile} {
+        position: absolute;
+        left: auto;
+        width: 151px;
+      }
+    }
   }
 `;
 
@@ -316,8 +345,10 @@ const ImagesFlex = styled.div`
 `;
 
 const Hero = ({
+  formContext,
   setFormContext,
 }: {
+  formContext: PopupProps;
   setFormContext: Dispatch<SetStateAction<PopupProps>>;
 }) => {
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -392,7 +423,7 @@ const Hero = ({
             providing a gamified experience of the financial markets.
           </p>
           <StyledForm
-            onSubmit={(ev) => submitHandler(ev, setFormContext)}
+            onSubmit={(ev) => submitHandler(ev, 0, setFormContext)}
             className="hero-form"
           >
             <div>
@@ -401,11 +432,16 @@ const Hero = ({
                 maxLength={10}
                 pattern="[0-9]{10}"
                 required
-                placeholder="Enter Mobile Number"
+                placeholder={
+                  formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                }
+                className={formContext?.status?.[0]}
                 name="mobile"
                 id="mobile"
               />
-              <input type="submit" value="get early access" />
+              {formContext?.loading?.[0] ? <span>
+                <Loader color="#191b2a" />
+              </span> : <input type="submit" value="get early access" />}
             </div>
           </StyledForm>
           <ImagesFlex className="hero-app-images">
