@@ -38,7 +38,7 @@ const Layout = () => {
             />
             <meta property="og:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png" />
 
-            <meta property="twitter:card" content="summary_large_image" />
+            <meta property="twitter:card" content="summary" />
             <meta property="twitter:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="twitter:title"

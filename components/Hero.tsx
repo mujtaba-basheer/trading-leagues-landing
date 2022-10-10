@@ -97,7 +97,7 @@ const StyledBanner = styled.div`
 
 const wheel = keyframes`
     0% {
-        transform: translateY(0);
+        transform: translateY(-100%);
     }
 
     50% {
@@ -105,7 +105,7 @@ const wheel = keyframes`
     }
 
     100% {
-        transform: translateY(-100%);
+        transform: translateY(0);
     }
 `;
 
@@ -157,7 +157,7 @@ const MainContent = styled.div`
       & > div {
         width: 100%;
         height: 200%;
-        transform: translateY(0);
+        transform: translateY(-100%);
         animation: ${wheel} 2.5s cubic-bezier(0.7, 0.08, 0.03, 0.82) infinite forwards;
         animation-delay: 2.5s;
       }
