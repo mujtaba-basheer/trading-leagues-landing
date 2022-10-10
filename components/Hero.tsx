@@ -110,7 +110,7 @@ const wheel = keyframes`
 `;
 
 const MainContent = styled.div`
-  height: calc(100vh - 90px - 2.5em);
+  height: calc(100vh - 50px - 40px - 2.5em - 8em);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -118,7 +118,7 @@ const MainContent = styled.div`
   gap: 2em;
 
   @media ${device.mobile} {
-    height: calc(100vh - 74px - 6.5em);
+    height: calc(100vh - 50px - 32px - 2.5em - 4em);
     width: 90vw;
     margin: 0 auto;
     gap: 10vh;
