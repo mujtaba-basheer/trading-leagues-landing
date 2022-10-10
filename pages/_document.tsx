@@ -11,6 +11,11 @@ export default function Document() {
                     src="https://www.googletagmanager.com/gtag/js?id=G-B840N99HCC"
                 ></Script>
                 <Script strategy="beforeInteractive">
+                    {`if (!window.location.host.startsWith("www")){
+                        window.location = window.location.protocol + "//" + "www." + window.location.host + window.location.pathname;
+                    }`}
+                </Script>
+                <Script strategy="beforeInteractive">
                     {`window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
