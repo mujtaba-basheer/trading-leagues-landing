@@ -118,7 +118,8 @@ const Popup = ({ formContext, setFormContext }: { setFormContext: Dispatch<SetSt
             mobile: "",
             wailist_no: 0,
             open_modal: false,
-            status: ""
+            status: ["", "", ""],
+            loading: [false, false, false]
         });
     };
 
