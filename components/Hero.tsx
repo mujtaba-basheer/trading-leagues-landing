@@ -285,7 +285,6 @@ const StyledForm = styled.form`
 
       &[type="text"] {
         background-color: #ffffff;
-        border-radius: 20px 0 0 20px;
         outline: none;
         font-size: 1rem;
         padding: 0;
