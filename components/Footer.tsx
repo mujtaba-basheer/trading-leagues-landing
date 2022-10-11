@@ -91,8 +91,9 @@ const StyledForm = styled.form`
         display: flex;
         align-items: center;
 
-        & div {
+        & div.input {
             height: 100%;
+            width: calc(100% - 20px);
             border-radius: 20px 0 0 20px;
             background-color: rgba(255, 255, 255, 0.1);
             color: #FFFFFF;
