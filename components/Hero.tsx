@@ -457,6 +457,7 @@ const Hero = ({
                 <span className="input">
                   <input
                     type="text"
+                    autoComplete="off"
                     maxLength={10}
                     pattern="[0-9]{10}"
                     required

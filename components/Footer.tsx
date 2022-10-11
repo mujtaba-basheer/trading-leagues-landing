@@ -211,7 +211,7 @@ const Footer = ({
                         <div className="input">
                             <span>+91 - </span>
                             <span className="input">
-                                <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder={
+                                <input type="text" autoComplete="off" maxLength={10} pattern="[0-9]{10}" required placeholder={
                                     formContext?.status?.[2] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
                                 }
                                     className={formContext?.status?.[2]} name="mobile" id="mobile" />
