@@ -25,8 +25,8 @@ export const leagueDetailsData: LeagueDetailsType[] = [
     key: "battle-leagues",
     main: "Vote for a stock that you believe will outperform the other! The simplest game in our universe - fun, light, and refreshing!",
     paras: [
-      "Think you can pick the winning stock? An easy game of choosing which stock would do better.",
-      "A simple fantasy, stock-picking game that offers an enjoyable experience for a newcomer.",
+      "Think you can pick the winning stock? An easy game of choosing which stock outperforms the other.",
+      "A simple fantasy stock-picking game that offers an enjoyable experience for a newcomer.",
       "Indices, India + US markets, and cryptocurrencies - multiple choices of markets to play in.",
       "Compete with friends in games ranging from as short as 10 minutes to as long as a day.",
     ],
@@ -64,7 +64,7 @@ export const leagueDetailsData: LeagueDetailsType[] = [
     key: "classic-leagues",
     main: "Compete against the best day traders on your favorite Index! Experience simulated trading with real-time charts. The most profitable trader wins!",
     paras: [
-      "Compete in a real-time, fantasy, day-trading competition, and the best day trader wins!",
+      "Compete in a real-time, fantasy, day-trading competition; the best day trader wins!",
       "An awesome introduction to charting and technical indicators.",
       "Your favorite indices; NIFTY, BANKNIFTY, S&P500, and much more. We have them all!",
       "Get started with free games or paid games for as low as ₹25!",

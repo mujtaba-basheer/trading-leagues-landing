@@ -28,7 +28,7 @@ const PopupContent = styled.div`
     position: relative;
     background-color: #FFFFFF;
     border-radius: 30px;
-    padding: 2.5em 2em;
+    padding: 2.5em 3em;
     text-align: center;
     left: 0;
 
@@ -61,7 +61,7 @@ const PopupContent = styled.div`
     }
 
     & > p {
-        font-size: 1.25rem;
+        font-size: 0.875rem;
         font-weight: 400;
 
         & span {
@@ -138,7 +138,7 @@ const Popup = ({ formContext, setFormContext }: { setFormContext: Dispatch<SetSt
                 <h2>You</h2>
                 <h2>#{formContext.wailist_no}</h2>
             </PopupInfo>
-            <p>You can begin your trading game soon. We will keep you updated.</p>
+            <p>Check your WhatsApp message to see how you can win amazing Apple merchandise.</p>
         </PopupContent>
     </Modal>;
 };

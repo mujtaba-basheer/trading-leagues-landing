@@ -2,8 +2,8 @@ import { InfoItemType } from "../types/index";
 
 export const infoData: InfoItemType[] = [
   {
-    heading: "Experience the stock markets - stress-free!",
-    para: "Get a light-touch experience of the market without all the fuss associated with a brokerage account.",
+    heading: "Experience the stock markets, stress-free!",
+    para: "Get a light-touch experience of the markets without all the fuss associated with a brokerage account.",
   },
   {
     heading: "Round-the-clock gaming: play anytime, anywhere!",

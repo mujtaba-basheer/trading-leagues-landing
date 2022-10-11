@@ -262,15 +262,15 @@ const Invite = ({
         <SectionContent>
             <TopSection>
                 <BigHeading>
-                    Invite friends over and compete for the ultimate Financial Market glory
+                    Invite friends over and compete for the ultimate financial market glory
                 </BigHeading>
             </TopSection>
             <BottomSection>
                 <CtaSection>
                     <h3>Refer & Earn!</h3>
-                    <p>Invite your friends & family to double the fun and compete for the ultimate Financial Market glory.</p>
+                    <p>Invite your friends & family to double the fun and compete for the ultimate financial market glory.</p>
                     <StyledForm onSubmit={(ev) => submitHandler(ev, 1, setFormContext)}>
-                        <label htmlFor="mobile">Enter your Whatsapp number to receive the referral link</label>
+                        <label htmlFor="mobile">Enter your Whatsapp number to receive your unique referral link</label>
                         <div>
                             <div className="input">
                                 <span>+91 - </span>

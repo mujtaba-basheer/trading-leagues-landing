@@ -41,7 +41,7 @@ const StyledDescription = styled.p`
     color: #FFFFFF;
     text-align: center;
     margin: 0 auto;
-    width: 500px;
+    width: 540px;
     margin-bottom: 3em;
 
     @media ${device.mobile} {
@@ -230,7 +230,7 @@ const Swiper: () => JSX.Element = () => {
                 Get your trade game on!
             </BigHeading>
             <StyledDescription>
-                Multiple stock market game formats to play, compete, and win real money!
+                Multiple stock market game formats to choose from. Play, compete, and win real money.
             </StyledDescription>
             <TabLinks>
                 {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>
