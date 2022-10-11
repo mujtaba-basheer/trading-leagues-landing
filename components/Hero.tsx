@@ -242,11 +242,34 @@ const StyledForm = styled.form`
     width: 100%;
   }
 
-  & div {
+  & > div {
     height: 40px;
     position: relative;
     display: flex;
     align-items: center;
+
+    & div.input {
+      background-color: #ffffff;
+      border-radius: 20px 0 0 20px;
+      padding-left: 1em;
+
+      @media ${device.mobile} {
+        padding-left: 0.5em;
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        right: 20px;
+        left: 0;
+      }
+
+      & > span {
+        font-size: 0.875rem;
+      }
+
+      & span.input {
+        margin-left: 0.5em;
+      }
+    }
 
     & input {
       display: inline-block;
@@ -265,6 +288,7 @@ const StyledForm = styled.form`
         border-radius: 20px 0 0 20px;
         outline: none;
         font-size: 1rem;
+        padding: 0;
 
         &::placeholder {
           color: #9ea0aa;
@@ -277,6 +301,7 @@ const StyledForm = styled.form`
         }
 
         @media ${device.mobile} {
+          position: relative;
           font-size: 0.875rem;
           left: 0;
           width: 90%;
@@ -428,18 +453,23 @@ const Hero = ({
             className="hero-form"
           >
             <div>
-              <input
-                type="text"
-                maxLength={10}
-                pattern="[0-9]{10}"
-                required
-                placeholder={
-                  formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "+91-(Enter Mobile Number)"
-                }
-                className={formContext?.status?.[0]}
-                name="mobile"
-                id="mobile"
-              />
+              <div className="input">
+                <span>+91 - </span>
+                <span className="input">
+                  <input
+                    type="text"
+                    maxLength={10}
+                    pattern="[0-9]{10}"
+                    required
+                    placeholder={
+                      formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                    }
+                    className={formContext?.status?.[0]}
+                    name="mobile"
+                    id="mobile"
+                  />
+                </span>
+              </div>
               {formContext?.loading?.[0] ? <span>
                 <Loader color="#191b2a" />
               </span> : <input type="submit" value="get early access" />}

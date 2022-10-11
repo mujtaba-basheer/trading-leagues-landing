@@ -100,7 +100,7 @@ const StyledForm = styled.form`
         margin-bottom: 1em;
     }
 
-    & div {
+    & > div {
         height: 40px;
         width: 100%;
         display: flex;
@@ -109,6 +109,24 @@ const StyledForm = styled.form`
 
         @media ${device.mobile} {
             position: relative;
+        }
+
+        & div.input {
+            height: 100%;
+            border-radius: 20px 0 0 20px;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding-left: 1em;
+            width: calc(100% - 20px);
+
+            & span {
+                display: inline-block;
+
+                &.input {
+                    margin-left: 0.5em;
+                }
+            }
         }
 
         & input {
@@ -123,13 +141,12 @@ const StyledForm = styled.form`
             }
 
             &[type="text"] {
-                border-radius: 20px 0 0 20px;
                 outline: none;
-                width: calc(100% - 20px);
+                padding: 0;
+                font-size: 0.875rem;
 
                 @media ${device.mobile} {
-                    left: 0;
-                    width: 90%;
+                    position: relative;
                 }
 
                 &.failure {
@@ -255,10 +272,15 @@ const Invite = ({
                     <StyledForm onSubmit={(ev) => submitHandler(ev, 1, setFormContext)}>
                         <label htmlFor="mobile">Enter your Whatsapp number to receive the referral link</label>
                         <div>
-                            <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder={
-                                formContext?.status?.[1] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
-                            }
-                                className={formContext?.status?.[1]} name="mobile" id="mobile" />
+                            <div className="input">
+                                <span>+91 - </span>
+                                <span className="input">
+                                    <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder={
+                                        formContext?.status?.[1] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                                    }
+                                        className={formContext?.status?.[1]} name="mobile" id="mobile" />
+                                </span>
+                            </div>
                             {formContext?.loading?.[1] ? <span>
                                 <Loader color="#2031AE" />
                             </span> : <input type="submit" value="send link" />}

@@ -85,11 +85,37 @@ const SocialSection = styled.div`
 `;
 
 const StyledForm = styled.form`
-    & div {
+    & > div {
         height: 40px;
         position: relative;
         display: flex;
         align-items: center;
+
+        & div {
+            height: 100%;
+            border-radius: 20px 0 0 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding-left: 1em;
+
+            @media ${device.mobile} {
+                padding-left: 0.5em;
+            }
+
+            & span {
+                display: inline-block;
+                
+                @media ${device.mobile} {
+                    font-size: 1rem;
+                }
+
+                &.input {
+                    margin-left: 0.5em;
+                }
+            }
+        }
 
         & input {
             display: inline-block;
@@ -104,15 +130,14 @@ const StyledForm = styled.form`
             }
 
             &[type="text"] {
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 20px 0 0 20px;
+                background-color: transparent;
+                padding: 0;
                 outline: none;
                 font-size: 1rem;
                 color: #FFFFFF;
 
                 @media ${device.mobile} {
-                    left: 0;
-                    width: 90%;
+                    position: relative;
                 }
 
                 &::placeholder {
@@ -138,6 +163,8 @@ const StyledForm = styled.form`
                 cursor: pointer;
 
                 @media ${device.mobile} {
+                    font-size: 0.825rem;
+                    padding: 0 0.5em;
                     position: absolute;
                     left: auto;
                     right: 0;
@@ -180,10 +207,15 @@ const Footer = ({
                 <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
                 <StyledForm onSubmit={(ev) => submitHandler(ev, 2, setFormContext)}>
                     <div>
-                        <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder={
-                            formContext?.status?.[2] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
-                        }
-                            className={formContext?.status?.[2]} name="mobile" id="mobile" />
+                        <div className="input">
+                            <span>+91 - </span>
+                            <span className="input">
+                                <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder={
+                                    formContext?.status?.[2] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                                }
+                                    className={formContext?.status?.[2]} name="mobile" id="mobile" />
+                            </span>
+                        </div>
                         {formContext?.loading?.[2] ? <span><Loader color="#191B2A" /></span> : <input type="submit" value="get early access" />}
                     </div>
                 </StyledForm>
