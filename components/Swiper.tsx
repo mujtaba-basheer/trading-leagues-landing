@@ -249,7 +249,7 @@ const Swiper: () => JSX.Element = () => {
             </MainContent>}
             <MainContentMobile>
                 {leagueDetailsData.map((x, i) => <LeagueContentMobile key={x.key}>
-                    <StyledImage alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
+                    <StyledImage color={x.color} alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
                     <StyledHeading color={x.color}>{x.heading}</StyledHeading>
                     <MainPara>{x.main}</MainPara>
                     {x.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
