@@ -122,7 +122,7 @@ const MainContent = styled.div`
     height: calc(100vh - 50px - 32px - 2.5em - 4em);
     width: 90vw;
     margin: 0 auto;
-    gap: 10vh;
+    gap: 7.5vh;
   }
 
   & h1 {
@@ -136,9 +136,9 @@ const MainContent = styled.div`
     perspective: 3000px;
 
     @media ${device.mobile} {
-      font-size: 2.5rem;
-      min-height: 48px;
-      gap: 0.5em;
+      font-size: 3rem;
+      min-height: 57px;
+      gap: 0.25em;
     }
 
     & > div {
@@ -146,12 +146,12 @@ const MainContent = styled.div`
       height: min-content;
       overflow-y: hidden;
       transform-style: preserve-3d;
-      width: 185px;
+      width: 180px;
       height: 76.67px;
       position: relative;
 
       @media ${device.mobile} {
-        height: 48px;
+        height: 57.33px;
         width: auto;
       }
 
@@ -191,6 +191,7 @@ const MainContent = styled.div`
       font-size: 1rem;
       line-height: 22.4px;
       width: auto;
+      margin-bottom: -2em;
     }
   }
 `;
@@ -433,7 +434,7 @@ const Hero = ({
                 pattern="[0-9]{10}"
                 required
                 placeholder={
-                  formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                  formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "+91-(Enter Mobile Number)"
                 }
                 className={formContext?.status?.[0]}
                 name="mobile"
