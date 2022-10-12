@@ -492,10 +492,10 @@ const Hero = ({
             </div>
           </StyledForm>
           <ImagesFlex className="hero-app-images">
-            <a href="" target="_blank">
+            <a href="#">
               <img src={`${asset_prefix}/assets/app-store.svg`} />
             </a>
-            <a href="" target="_blank">
+            <a href="#">
               <img src={`${asset_prefix}/assets/google-play.svg`} />
             </a>
           </ImagesFlex>
