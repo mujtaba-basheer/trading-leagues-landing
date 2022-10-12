@@ -70,7 +70,7 @@ const StyledBanner = styled.div`
       left: 0;
       top: 0;
       width: max-content;
-      animation: ${marquee} 25s linear infinite;
+      animation: ${marquee} 35s linear infinite;
 
       &:not(:first-child) {
         left: calc(5438px + 3em);
