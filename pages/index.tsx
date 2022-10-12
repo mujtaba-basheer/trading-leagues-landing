@@ -72,7 +72,7 @@ const Layout = () => {
 				/>
 				<meta
 					property="og:image"
-					content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png"
+					content="https://www.tradingleagues.in/assets/TLSymbol300_300.png"
 				/>
 
 				{/* <!-- Twitter --> */}
@@ -88,7 +88,7 @@ const Layout = () => {
 				/>
 				<meta
 					property="twitter:image"
-					content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png"
+					content="https://www.tradingleagues.in/assets/TLSymbol300_300.png"
 				/>
 			</Head>
 			<header style={{ display: "none", visibility: "hidden" }}>
