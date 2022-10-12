@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { Dispatch, SetStateAction, useContext } from 'react';
 
-import { PopupProps } from '../types';
-import device from '../styles/breakpoints';
+import { PopupProps } from '../../types';
+import device from '../../styles/breakpoints';
 
 const asset_prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
@@ -28,7 +28,7 @@ const PopupContent = styled.div`
     position: relative;
     background-color: #FFFFFF;
     border-radius: 30px;
-    padding: 2.5em 2em;
+    padding: 2.5em 3em;
     text-align: center;
     left: 0;
 
@@ -61,7 +61,7 @@ const PopupContent = styled.div`
     }
 
     & > p {
-        font-size: 1.25rem;
+        font-size: 0.875rem;
         font-weight: 400;
 
         & span {
@@ -117,7 +117,9 @@ const Popup = ({ formContext, setFormContext }: { setFormContext: Dispatch<SetSt
         setFormContext({
             mobile: "",
             wailist_no: 0,
-            open_modal: false
+            open_modal: false,
+            status: ["", "", ""],
+            loading: [false, false, false]
         });
     };
 
@@ -132,11 +134,11 @@ const Popup = ({ formContext, setFormContext }: { setFormContext: Dispatch<SetSt
             <p>A referral link has been successfully sent to <span>XXXXXX{transform(formContext.mobile)}</span></p>
             <PopupInfo>
                 <h3>Player</h3>
-                <h3>Wailist</h3>
+                <h3>Waitlist</h3>
                 <h2>You</h2>
                 <h2>#{formContext.wailist_no}</h2>
             </PopupInfo>
-            <p>You can begin your trading game soon. We will keep you updated.</p>
+            <p>Check your WhatsApp message to see how you can win amazing Apple merchandise.</p>
         </PopupContent>
     </Modal>;
 };

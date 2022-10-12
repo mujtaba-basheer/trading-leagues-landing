@@ -2,16 +2,16 @@ import { InfoItemType } from "../types/index";
 
 export const infoData: InfoItemType[] = [
   {
-    heading: "Experience the market-stressfree!",
-    para: "Get a light-touch experience of the financial market minus the loss, the risk, documentation or a brokerage account.",
+    heading: "Experience the stock markets, stress-free!",
+    para: "Get a light-touch experience of the markets without all the fuss associated with a brokerage account.",
   },
   {
-    heading: "Round-the-clock gaming. Play anytime, anywhere!",
-    para: "More than 100 games throughout the day to showcase your skills and keep on winning.Indices, US Markets & Crypto - we have it all.",
+    heading: "Round-the-clock gaming: play anytime, anywhere!",
+    para: "More than 100 games throughout the day to showcase your skills and keep on winning.",
   },
   {
-    heading: "Earn while you Learn with every game!",
-    para: "From Beginners to Pro Traders - we have games for everyone! The more you play, the more you learn.",
+    heading: "Earn while you learn with every game!",
+    para: "From beginners to pro traders - we have games for everyone! The more you play, the more you learn.",
   },
   {
     heading: "A growing community of champions!",
@@ -20,7 +20,7 @@ export const infoData: InfoItemType[] = [
 ];
 
 export const infoPoints: string[] = [
-  "No stress",
+  "No brokerage account",
   "No capital",
-  "No Brokerage Account",
+  "No stress",
 ];

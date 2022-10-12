@@ -1,6 +1,7 @@
 import styled, { keyframes } from "styled-components";
 import { SetStateAction, Dispatch, useState, useEffect } from "react";
 
+import Loader from "./ui/Loader";
 import { submitHandler } from "../lib/handler";
 import device from "../styles/breakpoints";
 import { PopupProps } from "../types";
@@ -69,13 +70,13 @@ const StyledBanner = styled.div`
       left: 0;
       top: 0;
       width: max-content;
-      animation: ${marquee} 10s linear infinite;
+      animation: ${marquee} 25s linear infinite;
 
       &:not(:first-child) {
-        left: calc(1434px + 3em);
+        left: calc(5438px + 3em);
 
         @media ${device.mobile} {
-          left: calc(1047px + 3em);
+          left: calc(3893px + 3em);
         }
       }
     }
@@ -121,7 +122,7 @@ const MainContent = styled.div`
     height: calc(100vh - 50px - 32px - 2.5em - 4em);
     width: 90vw;
     margin: 0 auto;
-    gap: 10vh;
+    gap: 7.5vh;
   }
 
   & h1 {
@@ -135,9 +136,9 @@ const MainContent = styled.div`
     perspective: 3000px;
 
     @media ${device.mobile} {
-      font-size: 2.5rem;
-      min-height: 48px;
-      gap: 0.5em;
+      font-size: 3rem;
+      min-height: 57px;
+      gap: 0.25em;
     }
 
     & > div {
@@ -145,12 +146,12 @@ const MainContent = styled.div`
       height: min-content;
       overflow-y: hidden;
       transform-style: preserve-3d;
-      width: 185px;
+      width: 180px;
       height: 76.67px;
       position: relative;
 
       @media ${device.mobile} {
-        height: 48px;
+        height: 57.33px;
         width: auto;
       }
 
@@ -190,6 +191,7 @@ const MainContent = styled.div`
       font-size: 1rem;
       line-height: 22.4px;
       width: auto;
+      margin-bottom: -2em;
     }
   }
 `;
@@ -240,11 +242,34 @@ const StyledForm = styled.form`
     width: 100%;
   }
 
-  & div {
+  & > div {
     height: 40px;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+
+    & div.input {
+      background-color: #ffffff;
+      border-radius: 20px 0 0 20px;
+      padding-left: 1em;
+
+      @media ${device.mobile} {
+        padding-left: 0.5em;
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        right: 20px;
+        left: 0;
+      }
+
+      & > span {
+        font-size: 0.875rem;
+      }
+
+      & span.input {
+        margin-left: 0.5em;
+      }
+    }
 
     & input {
       display: inline-block;
@@ -260,15 +285,22 @@ const StyledForm = styled.form`
 
       &[type="text"] {
         background-color: #ffffff;
-        border-radius: 20px 0 0 20px;
         outline: none;
         font-size: 1rem;
+        padding: 0;
 
         &::placeholder {
           color: #9ea0aa;
         }
 
+        &.failure {
+          &::placeholder {
+            color: red;
+          }
+        }
+
         @media ${device.mobile} {
+          position: relative;
           font-size: 0.875rem;
           left: 0;
           width: 90%;
@@ -296,6 +328,28 @@ const StyledForm = styled.form`
         }
       }
     }
+
+    & > span {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0 1.5em;
+      border-radius: 20px;
+      left: -20px;
+      background-color: #00df8d;
+      width: 188.55px;
+      right: 0;
+      bottom: 0;
+      padding: 5px 0;
+
+      @media ${device.mobile} {
+        position: absolute;
+        left: auto;
+        width: 151px;
+      }
+    }
   }
 `;
 
@@ -316,8 +370,10 @@ const ImagesFlex = styled.div`
 `;
 
 const Hero = ({
+  formContext,
   setFormContext,
 }: {
+  formContext: PopupProps;
   setFormContext: Dispatch<SetStateAction<PopupProps>>;
 }) => {
   const [pageLoaded, setPageLoaded] = useState(false);
@@ -353,16 +409,22 @@ const Hero = ({
       <StyledBanner className="banner">
         <div>
           <div className="scroll" style={{ display: "flex" }}>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
+            <span>COMING THIS NOVEMBER TO AN APP STORE NEAR YOU!</span>
+            <span>JOIN OUR REFERRAL PROGRAM AND WIN CRAZY APPLE MERCH!</span>
+            <span>TESLA VS TWITTER, ZOMATO VS PAYTM, BITCOIN VS DOGE - GET YOUR BATTLE LEAGUES GAMES ON!</span>
+            <span>FORECAST YOUR WAY THROUGH AND WIN BIG ON TARGET LEAGUES!</span>
+            <span>BUILD YOUR ALL-STAR SQUAD OF STOCKS ON SELECTION LEAGUES</span>
+            <span>FLEX YOUR CHARTING SKILLS AND DOMINATE THE NIFTY ON CLASSIC LEAGUES</span>
+            <span>TESLA TO THE MOON!</span>
           </div>
           <div className="scroll" style={{ display: "flex" }}>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
+            <span>COMING THIS NOVEMBER TO AN APP STORE NEAR YOU!</span>
+            <span>JOIN OUR REFERRAL PROGRAM AND WIN CRAZY APPLE MERCH!</span>
+            <span>TESLA VS TWITTER, ZOMATO VS PAYTM, BITCOIN VS DOGE - GET YOUR BATTLE LEAGUES GAMES ON!</span>
+            <span>FORECAST YOUR WAY THROUGH AND WIN BIG ON TARGET LEAGUES!</span>
+            <span>BUILD YOUR ALL-STAR SQUAD OF STOCKS ON SELECTION LEAGUES</span>
+            <span>FLEX YOUR CHARTING SKILLS AND DOMINATE THE NIFTY ON CLASSIC LEAGUES</span>
+            <span>TESLA TO THE MOON!</span>
           </div>
         </div>
       </StyledBanner>
@@ -378,8 +440,8 @@ const Hero = ({
         </TopSection>
         <MainContent className="hero-main">
           <h1>
-            <div>
-              <div>
+            <div className="anim-container">
+              <div className="movable">
                 <span>Game</span>
                 <span>Trade</span>
                 <span>Game</span>
@@ -392,20 +454,41 @@ const Hero = ({
             providing a gamified experience of the financial markets.
           </p>
           <StyledForm
-            onSubmit={(ev) => submitHandler(ev, setFormContext)}
+            onSubmit={(ev) => submitHandler(ev, 0, setFormContext)}
             className="hero-form"
           >
-            <div>
-              <input
-                type="text"
-                maxLength={10}
-                pattern="[0-9]{10}"
-                required
-                placeholder="Enter Mobile Number"
-                name="mobile"
-                id="mobile"
-              />
-              <input type="submit" value="get early access" />
+            <div className="form-content">
+              <div className="input">
+                <span className="prefix">+91 - </span>
+                <span className="input">
+                  <input
+                    type="text"
+                    autoComplete="off"
+                    maxLength={10}
+                    pattern="[0-9]{10}"
+                    required
+                    placeholder={
+                      formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                    }
+                    className={`text ${formContext?.status?.[0]}`}
+                    name="mobile"
+                    id="mobile"
+                    style={{ outline: "none", border: "none" }}
+                  />
+                </span>
+              </div>
+              {formContext?.loading?.[0] ? <span className="loader">
+                <Loader color="#191b2a" />
+              </span> : <input type="submit" value="get early access"
+                className="submit"
+                style={{
+                  backgroundColor: "#00df8d",
+                  outline: "none",
+                  border: "none",
+                  borderRadius: "20px",
+                  textTransform: "uppercase",
+                }}
+              />}
             </div>
           </StyledForm>
           <ImagesFlex className="hero-app-images">
@@ -418,7 +501,7 @@ const Hero = ({
           </ImagesFlex>
         </MainContent>
       </SectionContent>
-    </StyledSection>
+    </StyledSection >
   );
 };
 

@@ -45,8 +45,12 @@ export type ApiResponseType = {
   invite: 0 | 1;
 };
 
+type FormStatus = "success" | "failure" | "";
+
 export type PopupProps = {
   mobile: string;
   wailist_no: number;
   open_modal: boolean;
+  status: [FormStatus, FormStatus, FormStatus];
+  loading: [boolean, boolean, boolean];
 };

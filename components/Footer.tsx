@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import Loader from './ui/Loader';
 import { socialData } from '../lib/social';
 import { submitHandler } from '../lib/handler';
 import device from '../styles/breakpoints';
@@ -84,9 +85,38 @@ const SocialSection = styled.div`
 `;
 
 const StyledForm = styled.form`
-    & div {
+    & > div {
         height: 40px;
         position: relative;
+        display: flex;
+        align-items: center;
+
+        & div.input {
+            height: 100%;
+            width: calc(100% - 20px);
+            border-radius: 20px 0 0 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            padding-left: 1em;
+
+            @media ${device.mobile} {
+                padding-left: 0.5em;
+            }
+
+            & span {
+                display: inline-block;
+                
+                @media ${device.mobile} {
+                    font-size: 1rem;
+                }
+
+                &.input {
+                    margin-left: 0.5em;
+                }
+            }
+        }
 
         & input {
             display: inline-block;
@@ -101,19 +131,24 @@ const StyledForm = styled.form`
             }
 
             &[type="text"] {
-                background-color: rgba(255, 255, 255, 0.1);
-                border-radius: 20px 0 0 20px;
+                background-color: transparent;
+                padding: 0;
                 outline: none;
                 font-size: 1rem;
                 color: #FFFFFF;
 
                 @media ${device.mobile} {
-                    left: 0;
-                    width: 90%;
+                    position: relative;
                 }
 
                 &::placeholder {
                     color: #9EA0AA;
+                }
+
+                &.failure {
+                    &::placeholder {
+                        color: red;
+                    }
                 }
             }
 
@@ -129,38 +164,75 @@ const StyledForm = styled.form`
                 cursor: pointer;
 
                 @media ${device.mobile} {
+                    font-size: 0.825rem;
+                    padding: 0 0.5em;
                     position: absolute;
                     left: auto;
                     right: 0;
                 }
             }
         }
+
+        & > span {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            border-radius: 20px;
+            left: -20px;
+            background-color: #00DF8D;
+            width: 163.9px;
+            padding: 5px 0;
+
+            @media ${device.mobile} {
+                position: absolute;
+                left: auto;
+                right: 0;
+                bottom: 0;
+                width: 150px;
+            }
+        }
     }
 `;
 
-const Footer = ({ setFormContext }: { setFormContext: Dispatch<SetStateAction<PopupProps>>; }) => <StyledSection>
-    <SectionContent>
-        <CtaSection>
-            <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
-            <StyledForm onSubmit={(ev) => submitHandler(ev, setFormContext)}>
+const Footer = ({
+    formContext,
+    setFormContext,
+}: {
+    formContext: PopupProps;
+    setFormContext: Dispatch<SetStateAction<PopupProps>>;
+}) => <StyledSection>
+        <SectionContent>
+            <CtaSection>
+                <img src={`${asset_prefix}/assets/logo_footer.svg`} alt="logo" />
+                <StyledForm onSubmit={(ev) => submitHandler(ev, 2, setFormContext)}>
+                    <div>
+                        <div className="input">
+                            <span>+91 - </span>
+                            <span className="input">
+                                <input type="text" autoComplete="off" maxLength={10} pattern="[0-9]{10}" required placeholder={
+                                    formContext?.status?.[2] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
+                                }
+                                    className={formContext?.status?.[2]} name="mobile" id="mobile" />
+                            </span>
+                        </div>
+                        {formContext?.loading?.[2] ? <span><Loader color="#191B2A" /></span> : <input type="submit" value="get early access" />}
+                    </div>
+                </StyledForm>
+            </CtaSection>
+            <SocialSection>
+                <h2>Stay ahead of the game</h2>
                 <div>
-                    <input type="text" maxLength={10} pattern="[0-9]{10}" required placeholder="Enter Mobile Number" name="mobile" id="mobile" />
-                    <input type="submit" value="get early access" />
+                    <span>Follow our trail for the latest updates</span>
+                    <div className="social-list">
+                        {socialData.map(x => <a href={x.url} target="_blank" rel="noreferrer" key={x.title}>
+                            <img src={`${asset_prefix}/assets/social/${x.title}.svg`} alt={x.title} />
+                        </a>)}
+                    </div>
                 </div>
-            </StyledForm>
-        </CtaSection>
-        <SocialSection>
-            <h2>Stay ahead of the game</h2>
-            <div>
-                <span>Follow our trail for the latest updates</span>
-                <div className="social-list">
-                    {socialData.map(x => <a href={x.url} target="_blank" rel="noreferrer" key={x.title}>
-                        <img src={`${asset_prefix}/assets/social/${x.title}.svg`} alt={x.title} />
-                    </a>)}
-                </div>
-            </div>
-        </SocialSection>
-    </SectionContent>
-</StyledSection>;
+            </SocialSection>
+        </SectionContent>
+    </StyledSection>;
 
 export default Footer;

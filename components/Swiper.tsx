@@ -41,7 +41,7 @@ const StyledDescription = styled.p`
     color: #FFFFFF;
     text-align: center;
     margin: 0 auto;
-    width: 500px;
+    width: 540px;
     margin-bottom: 3em;
 
     @media ${device.mobile} {
@@ -67,6 +67,7 @@ const TabLinkItem = styled.button<{ "data-active": boolean; }>`
     font-weight: 600;
     background: none;
     border: none;
+    font-family: inherit;
     color: ${props => props["data-active"] ? "#00DF8D" : "#737585"};
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -187,11 +188,14 @@ const StyledImage = styled.img`
     width: 100%;
     opacity: 0;
     transition: opacity 200ms ease-in-out;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 5px ${props => props.color}50;
     position: absolute;
     bottom: 0;
     right: 0;
 
     @media ${device.mobile} {
+        border-radius: 15px;
         position: relative;
         width: 60%;
         height: auto;
@@ -226,7 +230,7 @@ const Swiper: () => JSX.Element = () => {
                 Get your trade game on!
             </BigHeading>
             <StyledDescription>
-                Choose from four game formats to get an immersive experience of the financial markets
+                Multiple stock market game formats to choose from. Play, compete, and win real money.
             </StyledDescription>
             <TabLinks>
                 {tabLinksData.map((x, i) => <TabLinkItem key={x.key} data-active={currentTab === i} onClick={() => setCurrentTab(i)}>
@@ -240,12 +244,12 @@ const Swiper: () => JSX.Element = () => {
                     {leagueDetails.paras?.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
                 </LeftSection>
                 <RightSection>
-                    {leagueDetailsData.map((x, i) => <StyledImage className={`${currentTab === i ? "active " + leagueDetails.state : ""}`} key={x.key} alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />)}
+                    {leagueDetailsData.map((x, i) => <StyledImage color={x.color} className={`${currentTab === i ? "active " + leagueDetails.state : ""}`} key={x.key} alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />)}
                 </RightSection>
             </MainContent>}
             <MainContentMobile>
                 {leagueDetailsData.map((x, i) => <LeagueContentMobile key={x.key}>
-                    <StyledImage alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
+                    <StyledImage color={x.color} alt="Play a BattleLeague trading game on TradingLeagues app and win!" src={`${asset_prefix}/assets/leagues/${x.img_file}.svg`} />
                     <StyledHeading color={x.color}>{x.heading}</StyledHeading>
                     <MainPara>{x.main}</MainPara>
                     {x.paras.map((x, i) => <ShortPara key={i}>{x}</ShortPara>)}
