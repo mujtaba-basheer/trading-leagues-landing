@@ -25,12 +25,12 @@ const Layout = () => {
 		<main>
 			<Head>
 				<title>
-					TradingLeagues: fantasy stock market game. Play, win & learn.
+					TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn.
 				</title>
 				<meta name="robots" content="index, follow" />
 				<meta
 					name="title"
-					content="TradingLeagues: fantasy stock market game. Play, win & learn."
+					content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
 				/>
 				<meta
 					name="description"
@@ -41,7 +41,7 @@ const Layout = () => {
             <meta property="og:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="og:title"
-                content="TradingLeagues: fantasy stock market game. Play, win & learn."
+                content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
             />
             <meta
                 property="og:description"
@@ -53,7 +53,7 @@ const Layout = () => {
             <meta property="twitter:url" content="https://www.tradingleagues.in/" />
             <meta
                 property="twitter:title"
-                content="TradingLeagues: fantasy stock market game. Play, win & learn."
+                content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
             />
             <meta
                 property="twitter:description"
@@ -66,7 +66,7 @@ const Layout = () => {
 				<meta property="og:url" content="https://www.tradingleagues.in/" />
 				<meta
 					property="og:title"
-					content="TradingLeagues: fantasy stock market game. Play, win & learn."
+					content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
 				/>
 				<meta
 					property="og:description"
@@ -82,7 +82,7 @@ const Layout = () => {
 				<meta property="twitter:url" content="https://www.tradingleagues.in/" />
 				<meta
 					property="twitter:title"
-					content="TradingLeagues: fantasy stock market game. Play, win & learn."
+					content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
 				/>
 				<meta
 					property="twitter:description"
