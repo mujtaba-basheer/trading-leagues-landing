@@ -70,13 +70,13 @@ const StyledBanner = styled.div`
       left: 0;
       top: 0;
       width: max-content;
-      animation: ${marquee} 10s linear infinite;
+      animation: ${marquee} 25s linear infinite;
 
       &:not(:first-child) {
-        left: calc(1434px + 3em);
+        left: calc(5438px + 3em);
 
         @media ${device.mobile} {
-          left: calc(1047px + 3em);
+          left: calc(3893px + 3em);
         }
       }
     }
@@ -409,16 +409,22 @@ const Hero = ({
       <StyledBanner className="banner">
         <div>
           <div className="scroll" style={{ display: "flex" }}>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
+            <span>COMING THIS NOVEMBER TO AN APP STORE NEAR YOU!</span>
+            <span>JOIN OUR REFERRAL PROGRAM AND WIN CRAZY APPLE MERCH!</span>
+            <span>TESLA VS TWITTER, ZOMATO VS PAYTM, BITCOIN VS DOGE - GET YOUR BATTLE LEAGUES GAMES ON!</span>
+            <span>FORECAST YOUR WAY THROUGH AND WIN BIG ON TARGET LEAGUES!</span>
+            <span>BUILD YOUR ALL-STAR SQUAD OF STOCKS ON SELECTION LEAGUES</span>
+            <span>FLEX YOUR CHARTING SKILLS AND DOMINATE THE NIFTY ON CLASSIC LEAGUES</span>
+            <span>TESLA TO THE MOON!</span>
           </div>
           <div className="scroll" style={{ display: "flex" }}>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
-            <span>Launching this November</span>
+            <span>COMING THIS NOVEMBER TO AN APP STORE NEAR YOU!</span>
+            <span>JOIN OUR REFERRAL PROGRAM AND WIN CRAZY APPLE MERCH!</span>
+            <span>TESLA VS TWITTER, ZOMATO VS PAYTM, BITCOIN VS DOGE - GET YOUR BATTLE LEAGUES GAMES ON!</span>
+            <span>FORECAST YOUR WAY THROUGH AND WIN BIG ON TARGET LEAGUES!</span>
+            <span>BUILD YOUR ALL-STAR SQUAD OF STOCKS ON SELECTION LEAGUES</span>
+            <span>FLEX YOUR CHARTING SKILLS AND DOMINATE THE NIFTY ON CLASSIC LEAGUES</span>
+            <span>TESLA TO THE MOON!</span>
           </div>
         </div>
       </StyledBanner>
