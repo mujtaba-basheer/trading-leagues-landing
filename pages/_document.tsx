@@ -45,7 +45,8 @@ export default function Document() {
                     href={`.${asset_prefix}/favicon.ico`}
                 />
                 <style>
-                    {`body {
+                    {`
+            body {
                 background-color: #191b2b;
             }
 
@@ -72,7 +73,7 @@ export default function Document() {
                 min-width: max-content !important;
             }
 
-            .banner > div {
+            .banner div.form-content {
                 height: 26px;
                 width: 100%;
                 max-width: 100vw;
@@ -81,7 +82,7 @@ export default function Document() {
                 display: none;
             }
 
-            .banner > div div.scroll {
+            .banner div.form-content div.scroll {
                 display: flex;
                 gap: 3em;
                 position: absolute;
@@ -90,7 +91,7 @@ export default function Document() {
                 width: max-content;
             }
 
-            .banner > div div.scroll:not(:first-child) {
+            .banner div.form-content div.scroll:not(:first-child) {
                 left: calc(1434px + 3em);
             }
 
@@ -105,7 +106,7 @@ export default function Document() {
                     font-size: 0.875rem;
                 }
 
-                .banner > div div.scroll:not(:first-child) {
+                .banner div.form-content div.scroll:not(:first-child) {
                     left: calc(1047px + 3em);
                 }
             }
@@ -178,7 +179,7 @@ export default function Document() {
                 perspective: 3000px;
             }
 
-            .hero-main h1 > div {
+            .hero-main h1 div.anim-container {
                 display: inline-block;
                 height: min-content;
                 overflow-y: hidden;
@@ -188,12 +189,12 @@ export default function Document() {
                 position: relative;
             }
 
-            .hero-main h1 > div > div {
+            .hero-main h1 div.anim-container div.movable {
                 width: 100%;
                 height: 200%;
             }
 
-            .hero-main h1 > div > div span {
+            .hero-main h1 div.anim-container div.movable span {
                 display: block;
                 height: 50%;
                 top: 0;
@@ -224,12 +225,12 @@ export default function Document() {
                     right: auto;
                     left: auto;
                     font-size: 2.5rem;
-                    min-height: 48px;
+                    min-height: 57.33px;
                     gap: 0.5em;
                 }
 
-                .hero-main h1 > div {
-                    height: 48px;
+                .hero-main h1 div.anim-container {
+                    height: 57.33px;
                     width: auto;
                 }
 
@@ -244,14 +245,32 @@ export default function Document() {
                 margin-bottom: 2em;
             }
 
-            .hero-form div {
+            .hero-form div.form-content {
                 height: 40px;
+                position: relative;
+                display: flex;
+                align-items: stretch;
+            }
+
+            .hero-form div.form-content div.input {
+                background-color: #ffffff;
+                border-radius: 20px 0 0 20px;
+                padding-left: 1em;
+                height: 100%;
                 position: relative;
                 display: flex;
                 align-items: center;
             }
 
-            .hero-form div input {
+            .hero-form div.form-content div.input span {
+                font-size: 0.875rem;
+            }
+
+            .hero-form div.form-content div.input span.input {
+                margin-left: 0.5em;
+            }
+
+            .hero-form div.form-content input {
                 display: inline-block;
                 height: 100%;
                 border: none;
@@ -259,18 +278,18 @@ export default function Document() {
                 outline: none;
             }
 
-            .hero-form div input[type="text"] {
+            .hero-form div.form-content input.text {
                 background-color: #ffffff;
-                border-radius: 20px 0 0 20px;
                 outline: none;
                 font-size: 1rem;
+                padding: 0;
             }
 
-            .hero-form div input[type="text"]::placeholder {
+            .hero-form div.form-content input.text::placeholder {
                 color: #9ea0aa;
             }
 
-            .hero-form div input[type="submit"] {
+            .hero-form div.form-content input.submit {
                 font-size: 1rem;
                 border-radius: 20px;
                 font-weight: 600;
@@ -284,23 +303,57 @@ export default function Document() {
                 right: 0;
             }
 
+            .hero-form div.form-content span.loader {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                padding: 0 1.5em;
+                border-radius: 20px;
+                left: -20px;
+                background-color: #00df8d;
+                width: 188.55px;
+                right: 0;
+                bottom: 0;
+                padding: 5px 0;
+            }
+
             @media screen and (max-width: 428px) {
                 .hero-form {
                     width: 100%;
                 }
 
-                .hero-form div input {
+                .hero-form div.form-content div.input {
+                    padding-left: 0.5em;
+                    position: absolute;
+                    height: 100%;
+                    bottom: 0px;
+                    right: 20px;
+                    left: 0px;
+                }
+
+                .hero-form div.form-content div.input span {
+                    font-size: 0.875rem;
+                }
+
+                .hero-form div.form-content div.input span.input {
+                    margin-left: 0.5em;
+                }
+
+                .hero-form div.form-content input {
                     position: absolute;
                     bottom: 0;
                 }
 
-                .hero-form div input[type="text"] {
+                .hero-form div.form-content input.text {
+                    position: relative;
                     font-size: 0.875rem;
-                    left: 0;
+                    left: 0px;
                     width: 90%;
                 }
 
-                .hero-form div input[type="submit"] {
+                .hero-form div.form-content input.submit {
                     position: absolute;
                     font-size: 0.875rem;
                     left: auto;

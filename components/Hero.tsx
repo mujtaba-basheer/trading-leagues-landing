@@ -246,7 +246,7 @@ const StyledForm = styled.form`
     height: 40px;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: stretch;
 
     & div.input {
       background-color: #ffffff;
@@ -434,8 +434,8 @@ const Hero = ({
         </TopSection>
         <MainContent className="hero-main">
           <h1>
-            <div>
-              <div>
+            <div className="anim-container">
+              <div className="movable">
                 <span>Game</span>
                 <span>Trade</span>
                 <span>Game</span>
@@ -451,9 +451,9 @@ const Hero = ({
             onSubmit={(ev) => submitHandler(ev, 0, setFormContext)}
             className="hero-form"
           >
-            <div>
+            <div className="form-content">
               <div className="input">
-                <span>+91 - </span>
+                <span className="prefix">+91 - </span>
                 <span className="input">
                   <input
                     type="text"
@@ -464,15 +464,25 @@ const Hero = ({
                     placeholder={
                       formContext?.status?.[0] === "failure" ? "Invalid Mobile Number" : "Enter Mobile Number"
                     }
-                    className={formContext?.status?.[0]}
+                    className={`text ${formContext?.status?.[0]}`}
                     name="mobile"
                     id="mobile"
+                    style={{ outline: "none", border: "none" }}
                   />
                 </span>
               </div>
-              {formContext?.loading?.[0] ? <span>
+              {formContext?.loading?.[0] ? <span className="loader">
                 <Loader color="#191b2a" />
-              </span> : <input type="submit" value="get early access" />}
+              </span> : <input type="submit" value="get early access"
+                className="submit"
+                style={{
+                  backgroundColor: "#00df8d",
+                  outline: "none",
+                  border: "none",
+                  borderRadius: "20px",
+                  textTransform: "uppercase",
+                }}
+              />}
             </div>
           </StyledForm>
           <ImagesFlex className="hero-app-images">
@@ -485,7 +495,7 @@ const Hero = ({
           </ImagesFlex>
         </MainContent>
       </SectionContent>
-    </StyledSection>
+    </StyledSection >
   );
 };
 
