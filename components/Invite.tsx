@@ -292,7 +292,7 @@ const Invite = ({
                         ₹100 <span>Game Credit</span>
                     </h3>
                     <p>Get ₹100 when you sign up</p>
-                    <p>Get ₹100 for every friend that downloads the app.
+                    <p>Get ₹100 for every friend that downloads the app
                     </p>
 
                     {coinCssDetails.map((x, i) => <PositionedImage src={`${asset_prefix}/assets/coin.svg`} alt="icon" key={i} {...x} />)}
