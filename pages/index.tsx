@@ -74,7 +74,7 @@ const Layout = () => {
 				/>
 				<meta
 					property="og:image"
-					content="https://www.tradingleagues.in/assets/TLSymbol300_300.png"
+					content="https://www.tradingleagues.in/assets/Social_Share-1600_900.png"
 				/>
 
 				{/* <!-- Twitter --> */}
@@ -90,7 +90,7 @@ const Layout = () => {
 				/>
 				<meta
 					property="twitter:image"
-					content="https://www.tradingleagues.in/assets/TLSymbol300_300.png"
+					content="https://www.tradingleagues.in/assets/Social_Share-1600_900.png"
 				/>
 			</Head>
 			<header style={{ display: "none", visibility: "hidden" }}>
