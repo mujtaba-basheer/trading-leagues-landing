@@ -179,7 +179,7 @@ const MainContent = styled.div`
     }
   }
 
-  & p {
+  & p.desc {
     font-size: 1.5rem;
     font-weight: 400;
     color: #ffffff;
@@ -236,8 +236,6 @@ const StyledLink = styled.a`
 `;
 
 const StyledForm = styled.form`
-  margin-bottom: 2em;
-
   @media ${device.mobile} {
     width: 100%;
   }
@@ -351,6 +349,18 @@ const StyledForm = styled.form`
       }
     }
   }
+
+  & p {
+    margin-top: 1.25em;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+
+    @media ${device.mobile} {
+      font-size: 0.875rem;
+    }
+  }
 `;
 
 const ImagesFlex = styled.div`
@@ -449,7 +459,7 @@ const Hero = ({
             </div>
             On!
           </h1>
-          <p>
+          <p className="desc">
             TradingLeagues is a first-of-its-kind fantasy trading platform
             providing a gamified experience of the financial markets.
           </p>
@@ -490,6 +500,9 @@ const Hero = ({
                 }}
               />}
             </div>
+            <p className="merch">
+              Shh...we're giving away crazy Apple merch!
+            </p>
           </StyledForm>
           <ImagesFlex className="hero-app-images">
             <a href="#">

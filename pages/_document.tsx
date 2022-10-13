@@ -203,7 +203,7 @@ export default function Document() {
                 font-size: inherit;
             }
 
-            .hero-main p {
+            .hero-main p.desc {
                 font-size: 1.5rem;
                 font-weight: 400;
                 color: #ffffff;
@@ -242,7 +242,6 @@ export default function Document() {
             }
 
             .hero-form {
-                margin-bottom: 2em;
             }
 
             .hero-form div.form-content {
@@ -319,6 +318,14 @@ export default function Document() {
                 padding: 5px 0;
             }
 
+            .hero-form p {
+                margin-top: 1.25em;
+                font-size: 1rem;
+                font-weight: 400;
+                color: #ffffff;
+                text-align: center;
+            }
+
             @media screen and (max-width: 428px) {
                 .hero-form {
                     width: 100%;
@@ -358,6 +365,10 @@ export default function Document() {
                     font-size: 0.875rem;
                     left: auto;
                     padding: 0 1em;
+                }
+
+                .hero-form p {
+                    font-size: 0.875rem;
                 }
             }
 
