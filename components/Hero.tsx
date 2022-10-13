@@ -352,7 +352,7 @@ const StyledForm = styled.form`
 
   & p {
     margin-top: 1.25em;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 400;
     color: #ffffff;
     text-align: center;
