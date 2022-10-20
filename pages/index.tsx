@@ -11,6 +11,7 @@ import Invite from "../components/Invite";
 import Footer from "../components/Footer";
 import Popup from "../components/ui/Popup";
 import { PopupProps } from "../types";
+import Founders from "../components/Founders";
 
 const Layout = () => {
 	const [formContext, setFormContext] = useState<PopupProps>({
@@ -109,6 +110,7 @@ const Layout = () => {
 			<InfoSection />
 			<Mockups />
 			<Invite formContext={formContext} setFormContext={setFormContext} />
+			<Founders />
 			<Footer formContext={formContext} setFormContext={setFormContext} />
 			{formContext.open_modal && (
 				<Popup formContext={formContext} setFormContext={setFormContext} />
