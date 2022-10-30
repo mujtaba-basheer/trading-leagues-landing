@@ -176,7 +176,10 @@ const Star3 = styled.img`
 const MobileView = () => {
 	return (
 		<Container>
-			<Header>Built by< br /> World Class Entrepreneurs</Header>
+			<Header>
+				Built by
+				<br /> World Class Entrepreneurs
+			</Header>
 			<IntroText>
 				TradingLeagues is a product by Rain Platforms, founded by Raghu Kumar
 				and Harsh Agarwal. Prior to Rain, Raghu founded <b>Upstox</b>, India's
@@ -185,23 +188,36 @@ const MobileView = () => {
 			</IntroText>
 			<FounderViewMob>
 				<FounderPic>
-					<img src={`${asset_prefix}/assets/founder/Raghu@1x.png`} alt="Raghu" />
+					<img
+						src={`${asset_prefix}/assets/founder/Raghu@1x.png`}
+						alt="Raghu"
+					/>
 				</FounderPic>
 				<FounderPic>
-					<img src={`${asset_prefix}/assets/founder/Harsh@1x.png`} alt="Harsh" />
+					<img
+						src={`${asset_prefix}/assets/founder/Harsh@1x.png`}
+						alt="Harsh"
+					/>
 				</FounderPic>
 			</FounderViewMob>
 			<FounderIntro>
 				<FItem>
 					<Name>Raghu Kumar</Name>
 					<Title>Co-founder- Rain Platforms</Title>
-					<p className="previous" style={{ marginBottom: ".3rem" }}>Previously founded:</p>
-					<img src={`${asset_prefix}/assets/founder/upstox_black.png`} alt="Upstox" />
+					<p className="previous" style={{ marginBottom: ".3rem" }}>
+						Previously founded:
+					</p>
+					<img
+						src={`${asset_prefix}/assets/founder/upstox_black.png`}
+						alt="Upstox"
+					/>
 				</FItem>
 				<FItem style={{ textAlign: "right" }}>
-					<Name>Harsh Aggarwal</Name>
+					<Name>Harsh Agarwal</Name>
 					<Title>Co-founder- Rain Platforms</Title>
-					<p className="previous" style={{ marginBottom: ".3rem" }}>Previously founded:</p>
+					<p className="previous" style={{ marginBottom: ".3rem" }}>
+						Previously founded:
+					</p>
 					<AG>AGacquisitions</AG>
 				</FItem>
 			</FounderIntro>
@@ -223,7 +239,11 @@ const Founders = () => {
 			<Header>Built by World Class Entrepreneurs</Header>
 			<ContentArea>
 				<FounderPic>
-					<img src={`${asset_prefix}/assets/founder/Raghu@1x.png`} alt="Raghu" className="img" />
+					<img
+						src={`${asset_prefix}/assets/founder/Raghu@1x.png`}
+						alt="Raghu"
+						className="img"
+					/>
 				</FounderPic>
 				<TextContainer>
 					<IntroText>
@@ -237,10 +257,13 @@ const Founders = () => {
 							<Name>Raghu Kumar</Name>
 							<Title>Co-founder- Rain Platforms</Title>
 							<p style={{ marginBottom: ".3rem" }}>Previously founded:</p>
-							<img src={`${asset_prefix}/assets/founder/Upstox.png`} alt="Upstox" />
+							<img
+								src={`${asset_prefix}/assets/founder/Upstox.png`}
+								alt="Upstox"
+							/>
 						</FItem>
 						<FItem style={{ textAlign: "right" }}>
-							<Name>Harsh Aggarwal</Name>
+							<Name>Harsh Agarwal</Name>
 							<Title>Co-founder- Rain Platforms</Title>
 							<p style={{ marginBottom: ".3rem" }}>Previously founded:</p>
 							<AG>AGacquisitions</AG>
@@ -248,7 +271,10 @@ const Founders = () => {
 					</FounderIntro>
 				</TextContainer>
 				<FounderPic>
-					<img src={`${asset_prefix}/assets/founder/Harsh@1x.png`} alt="Harsh" />
+					<img
+						src={`${asset_prefix}/assets/founder/Harsh@1x.png`}
+						alt="Harsh"
+					/>
 				</FounderPic>
 			</ContentArea>
 
