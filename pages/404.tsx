@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+  color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
     "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
   height: 100vh;
