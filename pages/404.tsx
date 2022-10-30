@@ -71,9 +71,9 @@ const PrivacyPolicy = () => {
       <Container>
         <Container>
           <StyledH1 className="next-error-h1">404</StyledH1>
-          <div>
-            <h2>This page could not be found.</h2>
-          </div>
+          <Content>
+            <StyledH2>This page could not be found.</StyledH2>
+          </Content>
         </Container>
       </Container>
     </main>
