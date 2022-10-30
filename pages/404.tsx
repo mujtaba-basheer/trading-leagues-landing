@@ -1,7 +1,7 @@
 /** @format */
 
 import Head from "next/head";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -44,12 +44,19 @@ const StyledH2 = styled.h2`
 `;
 
 const PrivacyPolicy = () => {
+  const [code, setCode] = useState("Redirecting");
+  const [text, setText] = useState("...");
+
   useEffect(() => {
     const pathname = window.location.pathname;
-    if (pathname === "/terms-and-conditions") {
+    if (
+      pathname === "/terms-and-conditions" ||
+      pathname === "/privacy-policy"
+    ) {
       window.location.pathname = pathname + ".html";
-    } else if (pathname === "/privacy-policy") {
-      window.location.pathname = pathname + ".html";
+    } else {
+      setCode("404");
+      setText("This page could not be found.");
     }
   }, []);
 
@@ -73,9 +80,9 @@ const PrivacyPolicy = () => {
       </Head>
       <Container>
         <Container>
-          <StyledH1 className="next-error-h1">404</StyledH1>
+          <StyledH1 className="next-error-h1">{code}</StyledH1>
           <Content>
-            <StyledH2>This page could not be found.</StyledH2>
+            <StyledH2>{text}</StyledH2>
           </Content>
         </Container>
       </Container>
