@@ -65,7 +65,7 @@ const PrivacyPolicy = () => {
       <Head>
         <title>TradingLeagues: Privacy Policy</title>
         <style>
-          {`body { margin: 0; color: #000; background: #fff; }
+          {`body { margin: 0; background: #fff; }
             .next-error-h1 {
                 border-right: 1px solid rgba(0, 0, 0, .3);
             }
@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
             }`}
         </style>
       </Head>
-      <Container>
+      <Container style={{ color: "white" }}>
         <Container>
           <StyledH1 className="next-error-h1">{code}</StyledH1>
           <Content>
