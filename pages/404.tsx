@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
   const router = useRouter();
 
   useEffect(() => {
-    console.log(router.pathname);
+    console.log(router.pathname, window.location.pathname);
   }, []);
 
   return (
