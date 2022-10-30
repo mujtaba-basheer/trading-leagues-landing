@@ -1,7 +1,6 @@
 /** @format */
 
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 import styled from "styled-components";
 
@@ -45,10 +44,13 @@ const StyledH2 = styled.h2`
 `;
 
 const PrivacyPolicy = () => {
-  const router = useRouter();
-
   useEffect(() => {
-    console.log(router.pathname, window.location.pathname);
+    const pathname = window.location.pathname;
+    if (pathname === "/terms-and-conditions") {
+      window.location.pathname = pathname + ".html";
+    } else if (pathname === "/privacy-policy") {
+      window.location.pathname = pathname + ".html";
+    }
   }, []);
 
   return (
