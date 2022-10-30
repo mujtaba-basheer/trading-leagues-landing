@@ -1,7 +1,8 @@
 /** @format */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 import Hero from "../components/Hero";
 import Swiper from "../components/Swiper";
@@ -14,6 +15,16 @@ import { PopupProps } from "../types";
 import Founders from "../components/Founders";
 
 const Layout = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.pathname === "/terms-and-conditions") {
+      router.push("/terms-and-conditions.html");
+    } else if (router.pathname === "/privacy-policy") {
+      router.push("/privacy-policy.html");
+    }
+  }, []);
+
   const [formContext, setFormContext] = useState<PopupProps>({
     mobile: "",
     wailist_no: 0,
@@ -37,32 +48,6 @@ const Layout = () => {
           name="description"
           content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
         />
-
-        {/* <meta property="og:type" content="website" />
-            <meta property="og:url" content="https://www.tradingleagues.in/" />
-            <meta
-                property="og:title"
-                content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
-            />
-            <meta
-                property="og:description"
-                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
-            />
-            <meta property="og:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png" />
-
-            <meta property="twitter:card" content="summary" />
-            <meta property="twitter:url" content="https://www.tradingleagues.in/" />
-            <meta
-                property="twitter:title"
-                content="TradingLeagues: Fantasy Stock Market Game. Play, Win & Learn."
-            />
-            <meta
-                property="twitter:description"
-                content="The best fantasy stock market game app! Choose from four stock market  games to play, compete, earn and learn stock trading. Refer and earn! Join a league now!"
-            />
-            <meta property="twitter:image" content="https://www.tradingleagues.in/assets/TradingLeagues_Logo.png" /> */}
-
-        {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.tradingleagues.in/" />
         <meta

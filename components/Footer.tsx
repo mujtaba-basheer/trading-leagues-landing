@@ -289,11 +289,9 @@ const Footer = ({
         </div>
         <div className="contact">
           <p>
-            <address>
-              Level 15, Concorde Towers, UB City,
-              <br />
-              #1 Vittal Mallya Road, Bangalore-560001
-            </address>
+            cLevel 15, Concorde Towers, UB City,
+            <br />
+            #1 Vittal Mallya Road, Bangalore-560001
           </p>
           <p>
             <a href="mailto:support@tradingleagues.in">
