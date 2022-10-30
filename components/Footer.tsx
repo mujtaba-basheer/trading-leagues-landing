@@ -86,6 +86,22 @@ const SocialSection = styled.div`
     }
   }
 
+  & > div.contact {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2em;
+
+    & p {
+      &:not(:last-child) {
+        margin-bottom: 0.3em;
+      }
+    }
+
+    & a {
+      text-decoration: underline;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  }
+
   & div.social-list {
     display: inline-flex;
     align-items: flex-end;
@@ -270,6 +286,23 @@ const Footer = ({
         <div className="links">
           <Link href="/terms-and-conditions">Terms and Conditions</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
+        </div>
+        <div className="contact">
+          <p>
+            <address>
+              Level 15, Concorde Towers, UB City,
+              <br />
+              #1 Vittal Mallya Road, Bangalore-560001
+            </address>
+          </p>
+          <p>
+            <a href="mailto:support@tradingleagues.in">
+              support@tradingleagues.in
+            </a>
+          </p>
+          <p>
+            <a href="tel:+91 9115997999">+91 9115997999</a>
+          </p>
         </div>
       </SocialSection>
     </SectionContent>
