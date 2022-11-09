@@ -8,17 +8,9 @@
   font-size: 16px;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-::-webkit-scrollbar-track {
-  display: none;
-}
-
 html,
 body {
   font-family: "Barlow", sans-serif;
-  scrollbar-width: none;
 }
 
 html {
